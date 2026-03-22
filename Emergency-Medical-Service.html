@@ -21,8 +21,8 @@
   --card-shadow:0 2px 16px rgba(0,0,0,.35);
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
-html,body{height:100%;overflow:hidden;max-width:100%;font-family:'Poppins',sans-serif;background:var(--pb);color:var(--tx);}
-.page{display:none;height:100%;flex-direction:column;overflow:hidden;min-height:0;}
+html,body{height:100%;overflow:hidden;max-width:100%;font-family:'Poppins',sans-serif;background:var(--pb);color:var(--tx);position:fixed;width:100%;}
+.page{display:none;height:100%;flex-direction:column;overflow:hidden;min-height:0;max-height:100%;}
 .page.active{display:flex;}
 .auth-page.active{overflow-y:auto;display:block;}
 .sb{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;}
@@ -37,10 +37,10 @@ html,body{height:100%;overflow:hidden;max-width:100%;font-family:'Poppins',sans-
 .mt{font-family:'Poppins',sans-serif;font-size:18px;font-weight:800;color:var(--p);margin-bottom:16px;}
 
 /* ─── HEADER ─── */
-.hdr{background:var(--hdr);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;box-shadow:0 4px 20px rgba(15,76,129,.4);}
+.hdr{background:var(--hdr);padding:9px 14px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0 !important;box-shadow:0 4px 20px rgba(15,76,129,.4);}
 .lw{display:flex;align-items:center;gap:10px;}
-.li{font-size:26px;}
-.lt{color:#fff;font-size:12px;font-weight:900;line-height:1.25;}
+.li{font-size:22px;}
+.lt{color:#fff;font-size:11px;font-weight:900;line-height:1.2;}
 .lt span{color:var(--ac3);}
 .hr{display:flex;align-items:center;gap:7px;}
 .gr{color:rgba(255,255,255,.9);font-size:11px;font-weight:700;}
@@ -51,8 +51,8 @@ html,body{height:100%;overflow:hidden;max-width:100%;font-family:'Poppins',sans-
 .lb{background:linear-gradient(135deg,#ff5f57,#e84040);border:none;color:#fff;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:800;cursor:pointer;}
 
 /* ─── TOP BAND ─── */
-.tb{background:var(--hdr);padding:0 16px 14px;flex-shrink:0;}
-.sx{display:flex;align-items:center;background:var(--ib);border-radius:14px;padding:10px 14px;gap:9px;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,.08);}
+.tb{background:var(--hdr);padding:0 12px 10px;flex-shrink:0 !important;}
+.sx{display:flex;align-items:center;background:var(--ib);border-radius:12px;padding:8px 12px;gap:8px;margin-bottom:8px;box-shadow:0 2px 8px rgba(0,0,0,.08);}
 .sx input{border:none;outline:none;flex:1;font-size:13px;color:var(--tx);background:transparent;font-family:'Poppins',sans-serif;}
 .fr{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;}
 .fr::-webkit-scrollbar{display:none;}
@@ -60,9 +60,9 @@ html,body{height:100%;overflow:hidden;max-width:100%;font-family:'Poppins',sans-
 .ft.active,.ft:hover{background:var(--ac);border-color:var(--ac);color:#003d35;}
 
 /* ─── STATS BAR ─── */
-.stb{display:flex;gap:8px;padding:12px 16px;background:var(--cb);border-bottom:1px solid var(--bd);flex-shrink:0;}
-.st{flex:1;text-align:center;background:var(--pb);border-radius:12px;padding:8px 4px;}
-.sn{font-size:16px;font-weight:900;color:var(--p);font-family:'Poppins',sans-serif;}
+.stb{display:flex;gap:6px;padding:7px 14px;background:var(--cb);border-bottom:1px solid var(--bd);flex-shrink:0 !important;}
+.st{flex:1;text-align:center;background:var(--pb);border-radius:10px;padding:5px 4px;}
+.sn{font-size:14px;font-weight:900;color:var(--p);font-family:'Poppins',sans-serif;}
 .sl{font-size:9px;color:var(--mu);font-weight:700;text-transform:uppercase;letter-spacing:.5px;}
 
 /* ─── PRODUCT CARDS ─── */
@@ -98,7 +98,7 @@ html,body{height:100%;overflow:hidden;max-width:100%;font-family:'Poppins',sans-
 .nr.show{display:block;}
 
 /* ─── BOTTOM NAV ─── */
-.bn{flex-shrink:0;background:var(--cb);padding:8px 0 10px;display:flex;box-shadow:0 -4px 20px rgba(0,0,0,.10);border-top:1px solid var(--bd);}
+.bn{flex-shrink:0;background:var(--cb);padding:8px 0 10px;display:flex;box-shadow:0 -4px 20px rgba(0,0,0,.10);border-top:1px solid var(--bd);position:sticky;bottom:0;z-index:100;}
 .ni{flex:1;display:flex;flex-direction:column;align-items:center;gap:1px;cursor:pointer;padding:2px 0;}
 .nic{font-size:21px;line-height:1.2;}
 .nl{font-size:9px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.4px;}
@@ -108,7 +108,7 @@ html,body{height:100%;overflow:hidden;max-width:100%;font-family:'Poppins',sans-
 .cbg{position:absolute;top:-6px;right:-9px;background:var(--ac2);color:#fff;font-size:9px;font-weight:800;width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
 
 /* ─── SUBHEADER ─── */
-.sh{background:var(--hdr);padding:14px 16px;color:#fff;font-size:17px;font-weight:800;display:flex;align-items:center;gap:10px;flex-shrink:0;font-family:'Poppins',sans-serif;}
+.sh{background:var(--hdr);padding:14px 16px;color:#fff;font-size:17px;font-weight:800;display:flex;align-items:center;gap:10px;flex-shrink:0 !important;font-family:'Poppins',sans-serif;}
 .bk{background:rgba(255,255,255,.15);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 
 /* ─── CART ─── */
@@ -482,7 +482,7 @@ html,body{height:100%;overflow:hidden;max-width:100%;font-family:'Poppins',sans-
   .admin-body{padding:20px;}
 }
 /* ══ PRESCRIPTION UPLOAD ══ */
-.rx-topbar{background:linear-gradient(135deg,#064e3b,#065f46);padding:9px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0;border-bottom:2px solid rgba(255,255,255,.1);}
+.rx-topbar{background:linear-gradient(135deg,#064e3b,#065f46);padding:9px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0 !important;border-bottom:2px solid rgba(255,255,255,.1);}
 .rx-topbar-txt{flex:1;color:rgba(255,255,255,.85);font-size:11px;font-weight:700;}
 .rx-upload-btn{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.2);border:1.5px solid rgba(255,255,255,.4);color:#fff;padding:7px 14px;border-radius:20px;font-size:12px;font-weight:800;cursor:pointer;transition:all .2s;white-space:nowrap;}
 .rx-upload-btn:hover,.rx-upload-btn:active{background:rgba(255,255,255,.32);}
@@ -507,6 +507,321 @@ html,body{height:100%;overflow:hidden;max-width:100%;font-family:'Poppins',sans-
 .rx-saved-name{font-size:12px;font-weight:800;color:var(--tx);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .rx-saved-date{font-size:10px;color:var(--mu);font-weight:600;}
 .rx-saved-del{background:none;border:none;font-size:18px;cursor:pointer;color:var(--rd);padding:0 4px;}
+
+/* ══ NEW FEATURES ══ */
+/* Health tip ticker */
+.tip-bar{background:linear-gradient(90deg,#064e3b,#0f766e);padding:8px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0 !important;cursor:pointer;overflow:hidden;}
+.tip-bar-ic{font-size:16px;flex-shrink:0;}
+.tip-bar-txt{flex:1;color:#fff;font-size:11px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.tip-bar-btn{background:rgba(255,255,255,.2);color:#fff;font-size:10px;font-weight:800;padding:3px 10px;border-radius:20px;flex-shrink:0;border:none;cursor:pointer;}
+
+/* Feature shortcuts strip */
+.feat-strip{display:flex;gap:10px;padding:12px 16px 4px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex-shrink:0 !important;}
+.feat-strip::-webkit-scrollbar{display:none;}
+.feat-btn{display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;flex-shrink:0;}
+.feat-btn-ic{width:50px;height:50px;background:var(--cb);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:var(--card-shadow);border:1px solid var(--bd);}
+.feat-btn-lbl{font-size:9px;font-weight:800;color:var(--mu);text-transform:uppercase;letter-spacing:.3px;}
+
+/* Sub-page shared header */
+.sub-hdr{background:var(--hdr);padding:13px 16px;display:flex;align-items:center;gap:11px;flex-shrink:0;}
+.sub-hdr-txt{color:#fff;font-size:16px;font-weight:900;}
+.sub-hdr-bk{background:rgba(255,255,255,.18);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+
+/* Shared scrollable body */
+.sub-body{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:14px 16px 24px;min-height:0;}
+
+/* ── Reminder ── */
+.rem-hero{background:linear-gradient(135deg,var(--p),var(--ac));border-radius:16px;padding:16px;margin-bottom:14px;color:#fff;display:flex;align-items:center;gap:14px;}
+.rem-hero-ic{font-size:38px;}
+.rem-form{background:var(--cb);border-radius:16px;padding:15px;border:1px solid var(--bd);box-shadow:var(--card-shadow);margin-bottom:14px;}
+.rem-form-title{font-size:13px;font-weight:900;color:var(--tx);margin-bottom:12px;}
+.rem-inp{width:100%;border:1.5px solid var(--bd);border-radius:10px;padding:10px 13px;font-size:13px;font-weight:600;outline:none;background:var(--ib);color:var(--tx);margin-bottom:10px;font-family:'Poppins',sans-serif;}
+.rem-inp:focus{border-color:var(--ac);}
+.rem-row2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;}
+.rem-row2 .rem-inp{margin-bottom:0;}
+.freq-row{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px;}
+.freq-chip{border:1.5px solid var(--bd);border-radius:20px;padding:5px 13px;font-size:11px;font-weight:700;cursor:pointer;color:var(--mu);background:var(--pb);transition:.15s;}
+.freq-chip.sel{background:var(--p);border-color:var(--p);color:#fff;}
+.rem-add-btn{width:100%;background:linear-gradient(135deg,var(--ac),#047857);color:#fff;border:none;padding:12px;border-radius:12px;font-size:13px;font-weight:800;cursor:pointer;font-family:'Poppins',sans-serif;}
+.rem-empty{text-align:center;padding:30px;color:var(--mu);font-size:12px;font-weight:600;}
+.rem-card{background:var(--cb);border-radius:14px;padding:13px;border:1px solid var(--bd);box-shadow:var(--card-shadow);margin-bottom:10px;display:flex;align-items:center;gap:11px;}
+.rem-card-left{font-size:26px;flex-shrink:0;}
+.rem-card-info{flex:1;min-width:0;}
+.rem-card-name{font-size:13px;font-weight:800;color:var(--tx);}
+.rem-card-meta{font-size:11px;color:var(--mu);font-weight:600;margin-top:2px;}
+.rem-card-time{font-size:13px;font-weight:900;color:var(--p);margin-top:3px;}
+.rem-taken{background:var(--pb);border:1.5px solid var(--bd);border-radius:8px;padding:4px 10px;font-size:11px;font-weight:800;cursor:pointer;color:var(--mu);white-space:nowrap;transition:.15s;}
+.rem-taken.done{background:#d1fae5;border-color:#6ee7b7;color:#065f46;}
+.rem-del-btn{background:none;border:none;font-size:17px;cursor:pointer;color:var(--rd);padding:4px;flex-shrink:0;}
+
+/* ── Symptom Checker ── */
+.sym-hero{background:linear-gradient(135deg,#7c3aed,#5b21b6);border-radius:16px;padding:16px;margin-bottom:14px;color:#fff;display:flex;align-items:center;gap:14px;}
+.sym-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:14px;}
+.sym-chip{background:var(--cb);border:2px solid var(--bd);border-radius:13px;padding:11px 8px;text-align:center;cursor:pointer;transition:.15s;box-shadow:var(--card-shadow);}
+.sym-chip.sel{border-color:#7c3aed;background:rgba(124,58,237,.08);}
+.sym-chip-ic{font-size:22px;margin-bottom:3px;}
+.sym-chip-lbl{font-size:11px;font-weight:800;color:var(--tx);}
+.sym-check-btn{width:100%;background:linear-gradient(135deg,#7c3aed,#5b21b6);color:#fff;border:none;padding:13px;border-radius:13px;font-size:14px;font-weight:800;cursor:pointer;font-family:'Poppins',sans-serif;}
+.sym-result{background:var(--cb);border-radius:14px;padding:14px;border:1px solid var(--bd);margin-top:14px;display:none;}
+.sym-result.show{display:block;}
+.sym-result-item{background:var(--pb);border-radius:11px;padding:12px;margin-bottom:10px;border-left:4px solid var(--ac);}
+.sym-name{font-size:13px;font-weight:900;color:var(--tx);margin-bottom:4px;}
+.sym-sev{display:inline-flex;padding:2px 9px;border-radius:20px;font-size:10px;font-weight:800;margin-bottom:6px;}
+.sym-sev.mild{background:#d1fae5;color:#065f46;}
+.sym-sev.mod{background:#fef3c7;color:#92400e;}
+.sym-sev.severe{background:#fee2e2;color:#991b1b;}
+.sym-desc{font-size:11px;color:var(--mu);font-weight:600;line-height:1.5;margin-bottom:7px;}
+.sym-meds{font-size:11px;color:var(--p2);font-weight:700;}
+.sym-disclaimer{background:#fff7ed;border-radius:11px;padding:11px;font-size:11px;color:#92400e;font-weight:700;margin-top:10px;}
+
+/* ── Health Calculators ── */
+.calc-tabs-row{display:flex;background:var(--cb);border-radius:12px;padding:4px;margin-bottom:14px;gap:3px;border:1px solid var(--bd);}
+.calc-tab{flex:1;padding:8px 4px;border-radius:9px;text-align:center;font-size:10px;font-weight:800;cursor:pointer;color:var(--mu);transition:.2s;}
+.calc-tab.active{background:var(--p);color:#fff;}
+.calc-panel{display:none;}
+.calc-panel.active{display:block;}
+.calc-card{background:var(--cb);border-radius:16px;padding:15px;border:1px solid var(--bd);box-shadow:var(--card-shadow);}
+.calc-lbl{font-size:11px;font-weight:800;color:var(--mu);display:block;margin-bottom:5px;text-transform:uppercase;letter-spacing:.4px;}
+.calc-inp{width:100%;border:1.5px solid var(--bd);border-radius:10px;padding:10px 13px;font-size:14px;font-weight:700;outline:none;background:var(--ib);color:var(--tx);margin-bottom:12px;font-family:'Poppins',sans-serif;}
+.calc-inp:focus{border-color:var(--ac);}
+.calc-sel{width:100%;border:1.5px solid var(--bd);border-radius:10px;padding:10px 13px;font-size:13px;font-weight:700;outline:none;background:var(--ib);color:var(--tx);margin-bottom:12px;font-family:'Poppins',sans-serif;}
+.calc-btn{width:100%;background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;border:none;padding:12px;border-radius:12px;font-size:14px;font-weight:800;cursor:pointer;font-family:'Poppins',sans-serif;}
+.calc-result{background:linear-gradient(135deg,rgba(15,76,129,.07),rgba(0,198,167,.07));border-radius:13px;padding:15px;margin-top:13px;text-align:center;border:1px solid var(--bd);display:none;}
+.calc-result.show{display:block;}
+.calc-result-val{font-size:38px;font-weight:900;color:var(--p);font-family:'Poppins',sans-serif;}
+.calc-result-cat{font-size:13px;font-weight:800;margin:4px 0 6px;}
+.calc-result-bar{height:9px;border-radius:5px;background:linear-gradient(90deg,#22c55e 0%,#f59e0b 50%,#ef4444 100%);margin:8px 0 4px;position:relative;}
+.calc-result-ptr{position:absolute;top:-4px;width:17px;height:17px;background:#fff;border:3px solid var(--p);border-radius:50%;transform:translateX(-50%);transition:.5s;}
+.calc-result-desc{font-size:11px;color:var(--mu);font-weight:600;line-height:1.5;margin-top:6px;}
+
+/* ── Nearby Pharmacies ── */
+.pharm-search-bar{display:flex;align-items:center;background:var(--ib);border-radius:13px;padding:10px 14px;gap:9px;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,.07);border:1px solid var(--bd);}
+.pharm-search-bar input{border:none;outline:none;flex:1;font-size:13px;color:var(--tx);background:transparent;font-family:'Poppins',sans-serif;}
+.pharm-card{background:var(--cb);border-radius:16px;padding:14px;border:1px solid var(--bd);box-shadow:var(--card-shadow);margin-bottom:12px;}
+.pharm-top{display:flex;align-items:flex-start;gap:11px;margin-bottom:10px;}
+.pharm-ic{font-size:28px;flex-shrink:0;}
+.pharm-name{font-size:13px;font-weight:900;color:var(--tx);}
+.pharm-addr{font-size:11px;color:var(--mu);font-weight:600;margin-top:2px;line-height:1.4;}
+.pharm-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:5px;}
+.pharm-tag{font-size:9px;font-weight:800;padding:2px 8px;border-radius:20px;}
+.pharm-open{background:#d1fae5;color:#065f46;}
+.pharm-24h{background:#dbeafe;color:#1d4ed8;}
+.pharm-closed{background:#fee2e2;color:#991b1b;}
+.pharm-dist{font-size:12px;font-weight:900;color:var(--p);white-space:nowrap;}
+.pharm-btns{display:flex;gap:8px;}
+.pharm-call-btn{flex:1;background:var(--hdr);color:#fff;border:none;padding:9px;border-radius:10px;font-size:12px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:5px;font-family:'Poppins',sans-serif;}
+.pharm-dir-btn{flex:1;background:var(--pb);border:1.5px solid var(--bd);color:var(--tx);padding:9px;border-radius:10px;font-size:12px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:5px;font-family:'Poppins',sans-serif;}
+
+/* ── Chat ── */
+.chat-body{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:14px 16px;display:flex;flex-direction:column;gap:10px;}
+.chat-bubble-wrap{display:flex;flex-direction:column;}
+.chat-bubble-wrap.user{align-items:flex-end;}
+.chat-sender{font-size:10px;font-weight:800;color:var(--mu);margin-bottom:3px;}
+.chat-bubble{max-width:80%;padding:10px 14px;border-radius:18px;font-size:12px;font-weight:600;line-height:1.55;}
+.chat-bubble.bot{background:var(--cb);border:1px solid var(--bd);color:var(--tx);border-bottom-left-radius:4px;box-shadow:var(--card-shadow);}
+.chat-bubble.user{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;border-bottom-right-radius:4px;}
+.chat-time{font-size:9px;color:var(--mu);margin-top:3px;}
+.chat-opts{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.chat-opt{border:1.5px solid var(--p);background:var(--pb);color:var(--p);padding:5px 12px;border-radius:20px;font-size:11px;font-weight:800;cursor:pointer;white-space:nowrap;}
+.chat-dot-wrap{display:flex;gap:4px;align-items:center;padding:8px 4px;}
+.chat-dot{width:7px;height:7px;background:var(--mu);border-radius:50%;animation:chatDot 1.2s infinite;}
+.chat-dot:nth-child(2){animation-delay:.2s;}
+.chat-dot:nth-child(3){animation-delay:.4s;}
+@keyframes chatDot{0%,80%,100%{transform:scale(.5);opacity:.4}40%{transform:scale(1);opacity:1}}
+.chat-bar{background:var(--cb);padding:10px 14px;border-top:1px solid var(--bd);display:flex;gap:9px;align-items:center;flex-shrink:0;}
+.chat-inp{flex:1;border:1.5px solid var(--bd);border-radius:22px;padding:9px 15px;font-size:13px;font-weight:600;outline:none;background:var(--ib);color:var(--tx);font-family:'Poppins',sans-serif;}
+.chat-inp:focus{border-color:var(--p);}
+.chat-send{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;border:none;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+
+/* ── Blog ── */
+.blog-card{background:var(--cb);border-radius:16px;overflow:hidden;box-shadow:var(--card-shadow);border:1px solid var(--bd);margin-bottom:14px;}
+.blog-thumb{height:110px;display:flex;align-items:center;justify-content:center;font-size:50px;background:linear-gradient(135deg,rgba(15,76,129,.08),rgba(0,198,167,.08));}
+.blog-body{padding:12px;}
+.blog-tag-badge{display:inline-flex;padding:2px 9px;border-radius:20px;font-size:9px;font-weight:800;margin-bottom:7px;}
+.blog-title{font-size:13px;font-weight:900;color:var(--tx);margin-bottom:5px;line-height:1.4;}
+.blog-excerpt{font-size:11px;color:var(--mu);font-weight:600;line-height:1.5;margin-bottom:8px;}
+.blog-footer{display:flex;justify-content:space-between;align-items:center;font-size:10px;color:var(--mu);font-weight:600;}
+.blog-read-btn{color:var(--p);font-weight:800;cursor:pointer;font-size:11px;}
+
+/* ── Loyalty bar ── */
+.loyalty-bar{background:linear-gradient(135deg,#7c3aed,#5b21b6);padding:8px 16px;display:flex;align-items:center;gap:10px;cursor:pointer;flex-shrink:0 !important;}
+.loyalty-txt{flex:1;color:#fff;font-size:11px;font-weight:700;}
+.loyalty-pts-badge{background:rgba(255,255,255,.2);color:#fff;font-size:11px;font-weight:900;padding:3px 11px;border-radius:20px;}
+
+/* ── Blog detail modal ── */
+.blog-detail-body{font-size:13px;color:var(--mu);font-weight:600;line-height:1.7;}
+.blog-detail-body ul{padding-left:18px;line-height:2.2;}
+.blog-detail-body b{color:var(--tx);}
+
+/* ══ NAVIGATION FIX — ALWAYS FIXED AT BOTTOM ══ */
+html, body {
+  height: 100% !important;
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100% !important;
+  top: 0; left: 0;
+}
+.page {
+  display: none;
+  height: 100% !important;
+  max-height: 100% !important;
+  flex-direction: column;
+  overflow: hidden !important;
+}
+.page.active { display: flex !important; }
+.auth-page.active { display: block !important; overflow-y: auto !important; height: 100% !important; }
+/* Every header/bar must not grow or shrink — stays in place */
+.hdr, .tb, .stb, .sh, .bn, .dh, .rx-topbar,
+.tip-bar, .loyalty-bar, .feat-strip, .sub-hdr,
+.admin-hdr, .admin-tabs, .rx-topbar, .chat-bar,
+.cf { flex-shrink: 0 !important; }
+/* Only these scroll */
+.sb, .sub-body, .ctb, .dgw, .admin-body, .ordbo,
+.chat-body, #blogBody { flex: 1 1 0 !important; overflow-y: auto !important; -webkit-overflow-scrolling: touch; min-height: 0 !important; }
+/* Bottom nav always last, never scrolls away */
+.bn {
+  position: sticky !important;
+  bottom: 0 !important;
+  z-index: 200 !important;
+  margin-top: auto;
+}
+
+/* ══ COMPACT TOP STRIP ══ */
+.info-strip {
+  background: #064e3b;
+  padding: 5px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-shrink: 0 !important;
+  min-height: 0;
+}
+.info-strip-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+.info-strip-txt {
+  color: rgba(255,255,255,.9);
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.info-strip-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.loyalty-mini {
+  color: #fbbf24;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+}
+/* ── SLIM FEATURE STRIP (inside gradient, horizontal scroll) ── */
+.feat-strip-slim {
+  background: rgba(0,0,0,.18);
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  flex-shrink: 0 !important;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.feat-strip-slim::-webkit-scrollbar { display: none; }
+.feat-slim-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 14px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 800;
+  color: rgba(255,255,255,.85);
+  white-space: nowrap;
+  flex-shrink: 0;
+  border-right: 1px solid rgba(255,255,255,.08);
+  transition: background .15s;
+}
+.feat-slim-btn:hover, .feat-slim-btn:active {
+  background: rgba(255,255,255,.15);
+  color: #fff;
+}
+.feat-slim-btn span {
+  font-size: 10px;
+  font-weight: 700;
+}
+/* Hide old bars if they slip through */
+.tip-bar, .loyalty-bar, .feat-strip { display: none !important; }
+
+
+/* ══ ATTRACTIVE FEATURE NAV CARDS ══ */
+.feat-nav-row {
+  display: flex;
+  gap: 8px;
+  padding: 10px 14px 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  background: var(--cb);
+  border-bottom: 1px solid var(--bd);
+}
+.feat-nav-row::-webkit-scrollbar { display: none; }
+
+.feat-nav-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: var(--fb, rgba(59,130,246,.1));
+  border: 1.5px solid var(--fc, #3b82f6);
+  min-width: 68px;
+  transition: transform .15s, box-shadow .15s;
+  position: relative;
+  overflow: hidden;
+}
+.feat-nav-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--fc, #3b82f6);
+  border-radius: 14px 14px 0 0;
+}
+.feat-nav-card:active {
+  transform: scale(.94);
+  box-shadow: 0 4px 16px rgba(0,0,0,.18);
+}
+.feat-nav-ic {
+  font-size: 22px;
+  line-height: 1;
+}
+.feat-nav-lbl {
+  font-size: 9.5px;
+  font-weight: 800;
+  color: var(--fc, #3b82f6);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  white-space: nowrap;
+}
+
+/* Hide old strip classes */
+.feat-strip-slim, .feat-slim-btn,
+.feat-strip, .feat-btn { display: none !important; }
+
 </style>
 </head>
 <body>
@@ -632,7 +947,7 @@ html,body{height:100%;overflow:hidden;max-width:100%;font-family:'Poppins',sans-
       <div class="er" id="loginErr"></div>
       <div class="ig"><label class="il">👤 Username</label><div class="iw"><span class="ic2">🪪</span><input type="text" id="loginUser" placeholder="Enter your username"></div></div>
       <div class="ig"><label class="il">🔒 Password</label><div class="iw"><span class="ic2">🔒</span><input type="password" id="loginPass" placeholder="Enter your password"><button class="eb" id="loginEye" onclick="toggleEye('loginPass','loginEye')">👁️</button></div></div>
-      <button class="db" onclick="fillDemo()">🚀 Demo: XXXXXX / passXXX</button>
+      <button class="db" onclick="fillDemo()">🚀 Demo: XXXXXX / passXXXXXX</button>
       <button class="ab" id="loginBtn" onclick="doLogin()">🚀 Sign In</button>
       <div class="asx">New here? <a onclick="goReg()">Create Account →</a></div>
       <div class="asx" style="margin-top:6px;">Admin? <a onclick="showPage('admin')">Admin Panel →</a></div>
@@ -677,11 +992,16 @@ html,body{height:100%;overflow:hidden;max-width:100%;font-family:'Poppins',sans-
   </div>
 
   <!-- PRESCRIPTION UPLOAD BAR -->
-  <div class="rx-topbar">
-    <span class="rx-topbar-txt">📋 Have a doctor's prescription? Upload it for faster service</span>
-    <button class="rx-upload-btn" onclick="openRxModal()">
-      📋 Upload Rx &nbsp;<span class="rx-badge" id="rxBadge">0</span>
-    </button>
+  <!-- COMPACT INFO STRIP: Rx + Tip + Loyalty in ONE thin bar -->
+  <div class="info-strip" id="infoStrip">
+    <div class="info-strip-left" onclick="openTipsModal()">
+      <span id="tipBarIc">💡</span>
+      <span id="tipBarTxt" class="info-strip-txt">Loading tip...</span>
+    </div>
+    <div class="info-strip-right">
+      <button class="rx-upload-btn" style="padding:4px 10px;font-size:10px;" onclick="openRxModal()">📋 Rx <span class="rx-badge" id="rxBadge">0</span></button>
+      <span class="loyalty-mini" onclick="toast('🌟 Earn 10 pts per ₹100!')">⭐<b id="loyaltyPtsHome">0</b>pts</span>
+    </div>
   </div>
 
   <div class="tb">
@@ -703,6 +1023,33 @@ html,body{height:100%;overflow:hidden;max-width:100%;font-family:'Poppins',sans-
     <div class="st"><div class="sn">24/7</div><div class="sl">Open</div></div>
   </div>
   <div class="sb">
+    <!-- FEATURE QUICK ACCESS — scrolls with page content -->
+    <div class="feat-nav-row">
+      <div class="feat-nav-card" onclick="showPage('reminder')" style="--fc:#3b82f6;--fb:rgba(59,130,246,.12);">
+        <div class="feat-nav-ic">⏰</div>
+        <div class="feat-nav-lbl">Reminders</div>
+      </div>
+      <div class="feat-nav-card" onclick="showPage('symptom')" style="--fc:#7c3aed;--fb:rgba(124,58,237,.12);">
+        <div class="feat-nav-ic">🩺</div>
+        <div class="feat-nav-lbl">Symptoms</div>
+      </div>
+      <div class="feat-nav-card" onclick="showPage('calculator')" style="--fc:#0891b2;--fb:rgba(8,145,178,.12);">
+        <div class="feat-nav-ic">🧮</div>
+        <div class="feat-nav-lbl">BMI Calc</div>
+      </div>
+      <div class="feat-nav-card" onclick="showPage('pharmacy')" style="--fc:#059669;--fb:rgba(5,150,105,.12);">
+        <div class="feat-nav-ic">🏪</div>
+        <div class="feat-nav-lbl">Pharmacy</div>
+      </div>
+      <div class="feat-nav-card" onclick="showPage('chat')" style="--fc:#db2777;--fb:rgba(219,39,119,.12);">
+        <div class="feat-nav-ic">💬</div>
+        <div class="feat-nav-lbl">MedChat</div>
+      </div>
+      <div class="feat-nav-card" onclick="showPage('blog')" style="--fc:#d97706;--fb:rgba(217,119,6,.12);">
+        <div class="feat-nav-ic">📰</div>
+        <div class="feat-nav-lbl">Blog</div>
+      </div>
+    </div>
     <div class="con"><div class="sec">💊 All Medicines &amp; Supplies</div><div class="mg" id="medGrid"></div><div class="nr" id="noRes">😔 No results found.</div></div>
   </div>
   <div class="bn">
@@ -1076,12 +1423,12 @@ var DOCTORS=[
 {name:"Vedhavalli",spec:"Pediatrician",cat:"child",ic:"👶",bg:"#d1fae5",tc:"#065f46",hospital:"Rainbow Hospital",addr:"No.1, South Boag Road, T.Nagar, Chennai - 600017",phone:"04442000000",qual:"MBBS, MD (Paediatrics)",exp:"10 yrs",rating:"4.8",fee:"₹400",timing:"Mon-Sat 8AM-2PM",avail:"available"},
 {name:"Lokesh",spec:"Neurologist",cat:"neuro",ic:"🧠",bg:"#ede9fe",tc:"#6d28d9",hospital:"SIMS Hospital",addr:"No.1, J.N. Salai, Vadapalani, Chennai - 600026",phone:"04443966000",qual:"MBBS, MD, DM (Neurology)",exp:"16 yrs",rating:"4.7",fee:"₹900",timing:"Mon-Fri 11AM-6PM",avail:"busy"},
 {name:"Vennila",spec:"Dentist",cat:"dental",ic:"🦷",bg:"#ecfdf5",tc:"#065f46",hospital:"Smile Dental Clinic",addr:"No.33, Nungambakkam High Road, Chennai - 600034",phone:"04428331122",qual:"BDS, MDS (Prosthodontics)",exp:"8 yrs",rating:"4.6",fee:"₹350",timing:"Mon-Sat 10AM-7PM",avail:"available"},
-{name:"Anitha",spec:"Skin Specialist",cat:"skin",ic:"🧴",bg:"#ffedd5",tc:"#c2410c",hospital:"Skin Plus Clinic",addr:"No.9, KNK Road, Nungambakkam, Chennai - 600006",phone:"04428213344",qual:"MBBS, MD (Dermatology)",exp:"11 yrs",rating:"4.7",fee:"₹500",timing:"Tue-Sun 10AM-6PM",avail:"available"},
-{name:"Vijay",spec:"General Physician",cat:"general",ic:"💊",bg:"#f0fdf4",tc:"#166534",hospital:"LifeCare Hospital",addr:"No.12, Mount Road, Guindy, Chennai - 600032",phone:"04422359900",qual:"MBBS, MD (General Medicine)",exp:"15 yrs",rating:"4.8",fee:"₹300",timing:"Mon-Sun 8AM-8PM",avail:"available"},
+{name:"Lavanya",spec:"Skin Specialist",cat:"skin",ic:"🧴",bg:"#ffedd5",tc:"#c2410c",hospital:"Skin Plus Clinic",addr:"No.9, KNK Road, Nungambakkam, Chennai - 600006",phone:"04428213344",qual:"MBBS, MD (Dermatology)",exp:"11 yrs",rating:"4.7",fee:"₹500",timing:"Tue-Sun 10AM-6PM",avail:"available"},
+{name:"Nisha",spec:"General Physician",cat:"general",ic:"💊",bg:"#f0fdf4",tc:"#166534",hospital:"LifeCare Hospital",addr:"No.12, Mount Road, Guindy, Chennai - 600032",phone:"04422359900",qual:"MBBS, MD (General Medicine)",exp:"15 yrs",rating:"4.8",fee:"₹300",timing:"Mon-Sun 8AM-8PM",avail:"available"},
 {name:"Deepa",spec:"Diabetologist",cat:"general",ic:"🩸",bg:"#fef9c3",tc:"#854d0e",hospital:"Metro Hospital",addr:"No.1, Kilpauk Garden Road, Chennai - 600010",phone:"04426411234",qual:"MBBS, MD, DM (Endocrinology)",exp:"13 yrs",rating:"4.8",fee:"₹600",timing:"Mon-Fri 9AM-5PM",avail:"available"},
 {name:"Mohan",spec:"Emergency Physician",cat:"general",ic:"🚑",bg:"#fee2e2",tc:"#dc2626",hospital:"RapidCare Hospital",addr:"No.56, Nelson Manickam Road, Chennai - 600029",phone:"04423749999",qual:"MBBS, MD (Emergency Medicine)",exp:"10 yrs",rating:"4.8",fee:"₹500",timing:"24/7 Emergency",avail:"available"},
-{name:"Sangeetha",spec:"Cardiologist",cat:"heart",ic:"💓",bg:"#fee2e2",tc:"#b91c1c",hospital:"HeartCare Hospital",addr:"No.3, Millers Road, Kilpauk, Chennai - 600010",phone:"04426418899",qual:"MBBS, MD, DM (Cardiology)",exp:"19 yrs",rating:"4.9",fee:"₹900",timing:"Mon-Fri 8AM-3PM",avail:"available"},
-{name:"Nisha",spec:"Pediatric Surgeon",cat:"child",ic:"🧒",bg:"#d1fae5",tc:"#047857",hospital:"KidsCare Hospital",addr:"No.2, Halls Road, Egmore, Chennai - 600008",phone:"04428192233",qual:"MBBS, MS, MCh (Ped. Surgery)",exp:"13 yrs",rating:"4.8",fee:"₹850",timing:"Mon-Sat 9AM-4PM",avail:"available"}
+{name:"Bhavadharani",spec:"Cardiologist",cat:"heart",ic:"💓",bg:"#fee2e2",tc:"#b91c1c",hospital:"HeartCare Hospital",addr:"No.3, Millers Road, Kilpauk, Chennai - 600010",phone:"04426418899",qual:"MBBS, MD, DM (Cardiology)",exp:"19 yrs",rating:"4.9",fee:"₹900",timing:"Mon-Fri 8AM-3PM",avail:"available"},
+{name:"Saranya",spec:"Pediatric Surgeon",cat:"child",ic:"🧒",bg:"#d1fae5",tc:"#047857",hospital:"KidsCare Hospital",addr:"No.2, Halls Road, Egmore, Chennai - 600008",phone:"04428192233",qual:"MBBS, MS, MCh (Ped. Surgery)",exp:"13 yrs",rating:"4.8",fee:"₹850",timing:"Mon-Sat 9AM-4PM",avail:"available"}
 ];
 
 var PROMOS={SAVE10:{d:10,t:"pct",m:"10% discount applied! 🎉"},FLAT50:{d:50,t:"flat",m:"₹50 flat discount applied!"},MEDS20:{d:20,t:"pct",m:"20% discount applied! 🎉"},FIRST100:{d:100,t:"flat",m:"₹100 first-order discount!"}};
@@ -1093,8 +1440,8 @@ var NOTIFS=[
 {ic:"🔔",tl:"Price Drop Alert",bd:"Paracetamol 500mg now at ₹35 — limited time!",tm:"3 days ago",rd:true}
 ];
 var DEFAULT_DOCCOMMENTS={
-"Rajesh":[{a:"Priya K",s:5,t:"Excellent eye specialist! Very patient and thorough.",tm:"2 days ago"},{a:"Suresh R",s:5,t:"Best eye doctor in Chennai.",tm:"1 week ago"}],
-"Vijay":[{a:"Ramesh P",s:5,t:"Excellent general physician, very affordable.",tm:"1 day ago"}]
+"Rajesh":[{a:"Priyadharshini R",s:5,t:"Excellent eye specialist! Very patient and thorough.",tm:"2 days ago"},{a:"Suresh R",s:5,t:"Best eye doctor in Chennai.",tm:"1 week ago"}],
+"Sharath":[{a:"Sofia S",s:5,t:"Excellent general physician, very affordable.",tm:"1 day ago"}]
 };
 
 // ── PERSISTENT STATE ─────────────────────────────────────────────────────────
@@ -2186,28 +2533,28 @@ document.addEventListener("keydown",function(e){
     <div class="mt">📋 Upload Prescription</div>
     <p style="font-size:12px;color:var(--mu);font-weight:600;margin-bottom:16px;">Upload your doctor's prescription. Admin will verify and process your order faster.</p>
 
-    <!-- FILE INPUTS — triggered by labels below -->
-    <input type="file" id="rxFileInput"   accept="image/*,application/pdf" onchange="rxFileChosen(this)" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;">
-    <input type="file" id="rxCameraInput" accept="image/*" capture="environment" onchange="rxFileChosen(this)" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;">
+    <!-- FILE INPUTS — hidden in normal DOM flow (display:none is reliable on all devices) -->
+    <input type="file" id="rxFileInput"   accept="image/*,application/pdf" onchange="rxFileChosen(this)" style="display:none;">
+    <input type="file" id="rxCameraInput" accept="image/*" capture="environment" onchange="rxFileChosen(this)" style="display:none;">
 
-    <!-- BUTTONS using <label for=...> — guaranteed to open file picker on mobile -->
+    <!-- BUTTONS: JS .click() trigger for maximum mobile compatibility -->
     <div style="display:flex;gap:10px;margin-bottom:16px;">
-      <label for="rxFileInput" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;background:var(--pb);border:2px solid var(--bd);color:var(--tx);padding:14px 8px;border-radius:13px;font-size:14px;font-weight:800;cursor:pointer;text-align:center;">
+      <button onclick="document.getElementById('rxFileInput').click()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;background:var(--pb);border:2px solid var(--bd);color:var(--tx);padding:14px 8px;border-radius:13px;font-size:14px;font-weight:800;cursor:pointer;text-align:center;font-family:Poppins,sans-serif;">
         🖼️ Gallery
-      </label>
-      <label for="rxCameraInput" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(135deg,#065f46,#047857);color:#fff;padding:14px 8px;border-radius:13px;font-size:14px;font-weight:800;cursor:pointer;text-align:center;">
+      </button>
+      <button onclick="document.getElementById('rxCameraInput').click()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(135deg,#065f46,#047857);color:#fff;padding:14px 8px;border-radius:13px;font-size:14px;font-weight:800;cursor:pointer;text-align:center;border:none;font-family:Poppins,sans-serif;">
         📸 Camera
-      </label>
+      </button>
     </div>
 
     <!-- PREVIEW (hidden until file chosen) -->
     <div id="rxPreview" style="display:none;text-align:center;margin-bottom:14px;">
       <img id="rxPreviewImg" src="" alt="" style="max-width:100%;max-height:240px;border-radius:12px;border:2px solid var(--bd);object-fit:contain;">
       <div id="rxPreviewName" style="font-size:11px;color:var(--mu);font-weight:700;margin-top:6px;"></div>
-      <!-- Re-select links -->
+      <!-- Re-select buttons -->
       <div style="display:flex;gap:8px;margin-top:10px;">
-        <label for="rxFileInput" style="flex:1;background:var(--pb);border:1.5px solid var(--bd);color:var(--mu);padding:8px;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;text-align:center;">🔄 Change (Gallery)</label>
-        <label for="rxCameraInput" style="flex:1;background:var(--pb);border:1.5px solid var(--bd);color:var(--mu);padding:8px;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;text-align:center;">📸 Retake</label>
+        <button onclick="document.getElementById('rxFileInput').click()" style="flex:1;background:var(--pb);border:1.5px solid var(--bd);color:var(--mu);padding:8px;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;font-family:Poppins,sans-serif;">🔄 Change (Gallery)</button>
+        <button onclick="document.getElementById('rxCameraInput').click()" style="flex:1;background:var(--pb);border:1.5px solid var(--bd);color:var(--mu);padding:8px;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;font-family:Poppins,sans-serif;">📸 Retake</button>
       </div>
     </div>
 
@@ -2286,8 +2633,9 @@ function rxSubmit() {
   if(!rxFileData) { toast("⚠️ Please select a file first"); return; }
   var user = loggedUser ? loggedUser.name : "Guest";
   var now  = new Date();
+  var rxId = "RX-" + Date.now();
   var entry = {
-    id: "RX-" + Date.now(),
+    id: rxId,
     name: rxFileName,
     data: rxFileData,
     user: user,
@@ -2297,19 +2645,201 @@ function rxSubmit() {
   prescriptions.push(entry);
   LS.set("prescriptions", prescriptions);
 
-  // Update badge
   var b1 = document.getElementById("rxBadge");
   var b2 = document.getElementById("rxCount2");
   if(b1) b1.textContent = prescriptions.length;
   if(b2) b2.textContent = prescriptions.length;
 
-  toast("✅ Prescription uploaded! Admin will verify soon.");
+  // Close upload modal
   rxFileData = null; rxFileName = "";
   var p = document.getElementById("rxPreview");     if(p) p.style.display = "none";
   var s = document.getElementById("rxSubmitBtn");   if(s) s.style.display = "none";
   var f = document.getElementById("rxFileInput");   if(f) f.value = "";
-  var c = document.getElementById("rxCameraInput"); if(c) c.value = "";
+  var cc = document.getElementById("rxCameraInput"); if(cc) cc.value = "";
   renderRxSaved();
+
+  // ── Close Rx modal then open Prescription Order Panel ──
+  var rxOv = document.getElementById("rxModalOverlay");
+  if(rxOv) rxOv.style.display = "none";
+  setTimeout(function(){ openRxOrderPanel(entry); }, 300);
+}
+
+// ── PRESCRIPTION ORDER PANEL ──
+var _rxOrderEntry = null;
+var _rxDelivType = "delivery";
+
+function openRxOrderPanel(rx) {
+  _rxOrderEntry = rx;
+  _rxDelivType = "delivery";
+  window._rxPayType = "cod";
+
+  var phoneVal = (typeof loggedUser !== "undefined" && loggedUser && loggedUser.phone) ? loggedUser.phone : "";
+
+  var html = '<div id="rxOrderPanelOv" style="display:flex;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:8500;align-items:flex-end;justify-content:center;" onclick="closeRxOrderPanel(event)">'
+    + '<div style="background:var(--cb);border-radius:24px 24px 0 0;width:100%;max-height:92vh;overflow-y:auto;padding:20px 18px 32px;" onclick="event.stopPropagation()">'
+    + '<div style="width:44px;height:5px;background:var(--bd);border-radius:4px;margin:0 auto 16px;"></div>'
+    + '<div style="background:linear-gradient(135deg,#065f46,#047857);border-radius:16px;padding:16px;margin-bottom:14px;text-align:center;color:#fff;">'
+    + '<div style="font-size:36px;margin-bottom:6px;">✅</div>'
+    + '<div style="font-size:17px;font-weight:900;margin-bottom:3px;">Prescription Submitted!</div>'
+    + '<div style="font-size:11px;opacity:.85;font-weight:600;">ID: ' + rx.id + ' · ' + rx.date + ' at ' + rx.time + '</div>'
+    + '<div style="font-size:11px;opacity:.85;margin-top:4px;font-weight:600;">📋 Pharmacist will verify within 30 minutes</div>'
+    + '</div>'
+    + (rx.data && rx.data.startsWith("data:image")
+      ? '<div style="text-align:center;margin-bottom:14px;"><img src="' + rx.data + '" style="max-width:100%;max-height:110px;border-radius:12px;border:2px solid var(--bd);object-fit:contain;"></div>'
+      : '<div style="text-align:center;margin-bottom:14px;background:var(--pb);border-radius:12px;padding:12px;"><span style="font-size:28px;">📄</span> <span style="font-size:12px;font-weight:700;color:var(--mu);">' + rx.name + '</span></div>'
+    )
+    + '<div style="font-size:13px;font-weight:900;color:var(--tx);margin-bottom:8px;">🚚 Choose Delivery Option</div>'
+    + '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">'
+    + '<div id="rxOptDeliv" onclick="rxSelectDeliv(\'delivery\')" style="border:2.5px solid var(--p);background:rgba(15,76,129,.06);border-radius:14px;padding:13px 10px;text-align:center;cursor:pointer;">'
+    + '<div style="font-size:24px;margin-bottom:4px;">🏠</div><div class="rxODlbl" style="font-size:12px;font-weight:900;color:var(--p);">Home Delivery</div><div style="font-size:10px;color:var(--mu);font-weight:600;margin-top:2px;">Within 2 hours · +₹40</div></div>'
+    + '<div id="rxOptPickup" onclick="rxSelectDeliv(\'pickup\')" style="border:2px solid var(--bd);background:var(--pb);border-radius:14px;padding:13px 10px;text-align:center;cursor:pointer;">'
+    + '<div style="font-size:24px;margin-bottom:4px;">🏪</div><div class="rxOPlbl" style="font-size:12px;font-weight:900;color:var(--tx);">Store Pickup</div><div style="font-size:10px;color:var(--mu);font-weight:600;margin-top:2px;">Free · Ready in 15 min</div></div>'
+    + '</div>'
+    + '<div id="rxAddrSection" style="margin-bottom:14px;">'
+    + '<div style="font-size:11px;font-weight:800;color:var(--mu);text-transform:uppercase;letter-spacing:.4px;margin-bottom:7px;">📍 Delivery Address</div>'
+    + '<input id="rxAddrLine1" placeholder="House / Flat No., Building Name" style="width:100%;border:1.5px solid var(--bd);border-radius:10px;padding:10px 13px;font-size:13px;font-weight:600;outline:none;background:var(--ib);color:var(--tx);margin-bottom:8px;font-family:Poppins,sans-serif;">'
+    + '<input id="rxAddrLine2" placeholder="Street, Area, Landmark" style="width:100%;border:1.5px solid var(--bd);border-radius:10px;padding:10px 13px;font-size:13px;font-weight:600;outline:none;background:var(--ib);color:var(--tx);margin-bottom:8px;font-family:Poppins,sans-serif;">'
+    + '<div style="display:flex;gap:8px;margin-bottom:8px;"><input id="rxAddrCity" placeholder="City" style="flex:1;border:1.5px solid var(--bd);border-radius:10px;padding:10px 13px;font-size:13px;font-weight:600;outline:none;background:var(--ib);color:var(--tx);font-family:Poppins,sans-serif;"><input id="rxAddrPin" placeholder="Pincode" maxlength="6" style="flex:1;border:1.5px solid var(--bd);border-radius:10px;padding:10px 13px;font-size:13px;font-weight:600;outline:none;background:var(--ib);color:var(--tx);font-family:Poppins,sans-serif;"></div>'
+    + '<input id="rxAddrPhone" placeholder="📞 Phone for delivery" type="tel" value="' + phoneVal + '" style="width:100%;border:1.5px solid var(--bd);border-radius:10px;padding:10px 13px;font-size:13px;font-weight:600;outline:none;background:var(--ib);color:var(--tx);font-family:Poppins,sans-serif;">'
+    + '</div>'
+    + '<div style="font-size:13px;font-weight:900;color:var(--tx);margin-bottom:8px;">💳 Payment Method</div>'
+    + '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">'
+    + '<div id="rxPayCOD" onclick="rxSelectPay(\'cod\')" style="border:2.5px solid var(--p);background:rgba(15,76,129,.06);border-radius:14px;padding:13px 10px;text-align:center;cursor:pointer;">'
+    + '<div style="font-size:24px;margin-bottom:4px;">💵</div><div class="rxCODlbl" style="font-size:12px;font-weight:900;color:var(--p);">Cash on Delivery</div><div style="font-size:10px;color:var(--mu);font-weight:600;margin-top:2px;">Pay when delivered</div></div>'
+    + '<div id="rxPayUPI" onclick="rxSelectPay(\'upi\')" style="border:2px solid var(--bd);background:var(--pb);border-radius:14px;padding:13px 10px;text-align:center;cursor:pointer;">'
+    + '<div style="font-size:24px;margin-bottom:4px;">📱</div><div class="rxUPIlbl" style="font-size:12px;font-weight:900;color:var(--tx);">UPI / Online</div><div style="font-size:10px;color:var(--mu);font-weight:600;margin-top:2px;">GPay, PhonePe, etc.</div></div>'
+    + '</div>'
+    + '<div id="rxUpiSection" style="display:none;margin-bottom:12px;"><input id="rxUpiId" placeholder="e.g. name@upi or 9876543210@paytm" style="width:100%;border:1.5px solid var(--bd);border-radius:10px;padding:10px 13px;font-size:13px;font-weight:600;outline:none;background:var(--ib);color:var(--tx);font-family:Poppins,sans-serif;"></div>'
+    + '<div style="background:var(--pb);border-radius:13px;padding:13px;border:1px solid var(--bd);margin-bottom:14px;">'
+    + '<div style="font-size:11px;font-weight:900;color:var(--mu);text-transform:uppercase;letter-spacing:.4px;margin-bottom:8px;">📋 Order Summary</div>'
+    + '<div style="display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:var(--mu);margin-bottom:5px;"><span>Prescription Order</span><span>—</span></div>'
+    + '<div id="rxDelivSumRow" style="display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:var(--mu);margin-bottom:5px;"><span>🚚 Delivery Charges</span><span>₹40</span></div>'
+    + '<div style="display:flex;justify-content:space-between;font-size:14px;font-weight:900;color:var(--p);border-top:1px solid var(--bd);padding-top:8px;margin-top:4px;"><span>💰 Total Payable</span><span id="rxTotalAmt">₹40</span></div>'
+    + '</div>'
+    + '<button onclick="rxPlaceOrder()" style="width:100%;background:linear-gradient(135deg,var(--ac),#047857);color:#fff;border:none;padding:15px;border-radius:14px;font-size:15px;font-weight:900;cursor:pointer;margin-bottom:10px;font-family:Poppins,sans-serif;">✅ Place Prescription Order</button>'
+    + '<button onclick="closeRxOrderPanel();switchTab(\'home\')" style="width:100%;background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;border:none;padding:12px;border-radius:13px;font-size:13px;font-weight:800;cursor:pointer;margin-bottom:10px;font-family:Poppins,sans-serif;">🛒 Browse & Add Medicines to Cart</button>'
+    + '<button onclick="closeRxOrderPanel()" style="width:100%;background:var(--pb);border:1.5px solid var(--bd);color:var(--mu);padding:11px;border-radius:13px;font-size:13px;font-weight:700;cursor:pointer;font-family:Poppins,sans-serif;">✕ Close</button>'
+    + '</div></div>';
+
+  document.body.insertAdjacentHTML('beforeend', html);
+}
+
+function rxSelectDeliv(type) {
+  _rxDelivType = type;
+  var dEl = document.getElementById('rxOptDeliv');
+  var pEl = document.getElementById('rxOptPickup');
+  var aEl = document.getElementById('rxAddrSection');
+  var sRow = document.getElementById('rxDelivSumRow');
+  var tot  = document.getElementById('rxTotalAmt');
+  if(type === 'delivery') {
+    dEl.style.border = '2.5px solid var(--p)'; dEl.style.background = 'rgba(15,76,129,.06)';
+    dEl.querySelector('.rxODlbl').style.color = 'var(--p)';
+    pEl.style.border = '2px solid var(--bd)'; pEl.style.background = 'var(--pb)';
+    pEl.querySelector('.rxOPlbl').style.color = 'var(--tx)';
+    aEl.style.display = 'block';
+    if(sRow) sRow.style.display = 'flex';
+    if(tot) tot.textContent = '₹40';
+  } else {
+    pEl.style.border = '2.5px solid var(--p)'; pEl.style.background = 'rgba(15,76,129,.06)';
+    pEl.querySelector('.rxOPlbl').style.color = 'var(--p)';
+    dEl.style.border = '2px solid var(--bd)'; dEl.style.background = 'var(--pb)';
+    dEl.querySelector('.rxODlbl').style.color = 'var(--tx)';
+    aEl.style.display = 'none';
+    if(sRow) sRow.style.display = 'none';
+    if(tot) tot.textContent = '₹0';
+  }
+}
+
+function rxSelectPay(type) {
+  window._rxPayType = type;
+  var cEl = document.getElementById('rxPayCOD');
+  var uEl = document.getElementById('rxPayUPI');
+  var uSec = document.getElementById('rxUpiSection');
+  if(type === 'cod') {
+    cEl.style.border = '2.5px solid var(--p)'; cEl.style.background = 'rgba(15,76,129,.06)';
+    cEl.querySelector('.rxCODlbl').style.color = 'var(--p)';
+    uEl.style.border = '2px solid var(--bd)'; uEl.style.background = 'var(--pb)';
+    uEl.querySelector('.rxUPIlbl').style.color = 'var(--tx)';
+    if(uSec) uSec.style.display = 'none';
+  } else {
+    uEl.style.border = '2.5px solid var(--p)'; uEl.style.background = 'rgba(15,76,129,.06)';
+    uEl.querySelector('.rxUPIlbl').style.color = 'var(--p)';
+    cEl.style.border = '2px solid var(--bd)'; cEl.style.background = 'var(--pb)';
+    cEl.querySelector('.rxCODlbl').style.color = 'var(--tx)';
+    if(uSec) uSec.style.display = 'block';
+  }
+}
+
+function rxPlaceOrder() {
+  var rx = _rxOrderEntry;
+  if(!rx) { toast("❌ No prescription found"); return; }
+  if(_rxDelivType === 'delivery') {
+    var l1 = (document.getElementById('rxAddrLine1').value||"").trim();
+    var l2 = (document.getElementById('rxAddrLine2').value||"").trim();
+    var pin = (document.getElementById('rxAddrPin').value||"").trim();
+    var ph  = (document.getElementById('rxAddrPhone').value||"").trim();
+    if(!l1||!l2){ toast("⚠️ Please enter your full delivery address!"); return; }
+    if(!pin||pin.length!==6){ toast("⚠️ Enter a valid 6-digit pincode!"); return; }
+    if(!ph||ph.replace(/\D/g,"").length<10){ toast("⚠️ Enter a valid phone number!"); return; }
+  }
+  if(window._rxPayType === 'upi') {
+    var upi = (document.getElementById('rxUpiId').value||"").trim();
+    if(!upi){ toast("⚠️ Please enter your UPI ID or mobile number!"); return; }
+  }
+  var addrStr = 'Store Pickup';
+  if(_rxDelivType === 'delivery') {
+    addrStr = (document.getElementById('rxAddrLine1').value||"").trim()
+      + ", " + (document.getElementById('rxAddrLine2').value||"").trim()
+      + ", " + (document.getElementById('rxAddrCity').value||"").trim()
+      + " - " + (document.getElementById('rxAddrPin').value||"").trim();
+  }
+  var payLabel = window._rxPayType === 'cod'
+    ? '✅ Cash on Delivery'
+    : '✅ UPI / Online (' + ((document.getElementById('rxUpiId') && document.getElementById('rxUpiId').value)||"") + ')';
+  var delivCharge = _rxDelivType === 'delivery' ? 40 : 0;
+  var id = "EMS-" + (Math.floor(Math.random()*9000)+1000);
+  var dt = new Date().toLocaleDateString("en-IN",{year:"numeric",month:"long",day:"numeric"});
+  var eta = _rxDelivType === 'delivery' ? 'Within 2 Hours' : 'Ready in 15 min';
+  orders.unshift({
+    id: id, date: dt, status: "processing",
+    items: "📋 Prescription Order (" + rx.name + ")", total: "₹" + delivCharge,
+    user: (typeof loggedUser !== "undefined" && loggedUser) ? loggedUser.name : "Guest",
+    address: addrStr, payment: payLabel,
+    delivType: _rxDelivType, rxId: rx.id
+  });
+  saveOrders();
+  var panel = document.getElementById('rxOrderPanelOv');
+  if(panel && panel.parentNode) panel.parentNode.removeChild(panel);
+  document.getElementById('ordSuccId').textContent   = "#" + id;
+  document.getElementById('ordSuccDate').textContent  = dt;
+  document.getElementById('ordSuccItems').textContent = "📋 Prescription: " + rx.name;
+  document.getElementById('ordSuccAmt').textContent   = "₹" + delivCharge;
+  document.getElementById('ordSuccPay').textContent   = payLabel;
+  document.getElementById('ordSuccETA').textContent   = eta;
+  document.getElementById('ordSuccAddr').textContent  = addrStr;
+  document.getElementById('ordSuccMod').classList.add('open');
+}
+
+function closeRxOrderPanel(e) {
+  var panel = document.getElementById("rxOrderPanelOv");
+  if(panel && (!e || e.target === panel)) {
+    panel.style.opacity = '0';
+    panel.style.transition = 'opacity .2s';
+    setTimeout(function(){ if(panel && panel.parentNode) panel.parentNode.removeChild(panel); }, 200);
+  }
+}
+
+function rxQuickAdd(name) {
+  var meds = LS.get("meds", DEFAULT_MEDS);
+  var med = meds.find(function(m){ return m.n === name; });
+  if(!med){ toast("❌ Medicine not found"); return; }
+  var cart = LS.get("cart", []);
+  var ex = cart.find(function(c){ return c.n === med.n; });
+  if(ex){ ex.qty = (ex.qty||1)+1; }
+  else { cart.push({n:med.n,p:med.p,ic:med.ic,qty:1,t:med.t}); }
+  LS.set("cart", cart);
+  updBadges();
+  toast("✅ "+med.n+" added to cart!");
 }
 
 function renderRxSaved() {
@@ -2495,5 +3025,614 @@ function closeSosOverlay() {
   var o = document.getElementById("sosOverlay"); if(o) o.style.display="none";
 }
 </script>
-</body>
+
+<!-- ══ MEDICINE REMINDER PAGE ══ -->
+<div class="page" id="reminderPage">
+  <div class="sub-hdr">
+    <button class="sub-hdr-bk" onclick="history.back();showPage('home')">←</button>
+    <span class="sub-hdr-txt">⏰ Medicine Reminders</span>
+  </div>
+  <div class="sub-body">
+    <div class="rem-hero">
+      <span style="font-size:36px;">⏰</span>
+      <div><div style="font-size:15px;font-weight:900;">Never Miss a Dose</div><div style="font-size:11px;opacity:.85;margin-top:2px;">Set reminders for all your medicines</div></div>
+    </div>
+    <div class="rem-form">
+      <div class="rem-form-title">➕ Add New Reminder</div>
+      <input class="rem-inp" id="remName" placeholder="💊 Medicine name (e.g. Paracetamol 500mg)">
+      <div class="rem-row2">
+        <input class="rem-inp" id="remDose" placeholder="💉 Dosage (e.g. 1 tablet)">
+        <input class="rem-inp" type="time" id="remTime">
+      </div>
+      <div class="freq-row" id="freqRow">
+        <div class="freq-chip sel" onclick="selFreq(this,'Daily')">Daily</div>
+        <div class="freq-chip" onclick="selFreq(this,'Twice Daily')">Twice/Day</div>
+        <div class="freq-chip" onclick="selFreq(this,'Weekly')">Weekly</div>
+        <div class="freq-chip" onclick="selFreq(this,'SOS')">SOS</div>
+      </div>
+      <input class="rem-inp" id="remNotes" placeholder="📝 Notes (e.g. after meals)">
+      <button class="rem-add-btn" onclick="addReminder()">⏰ Set Reminder</button>
+    </div>
+    <div style="font-size:13px;font-weight:900;color:var(--tx);margin-bottom:10px;">📋 My Reminders</div>
+    <div id="remList"></div>
+  </div>
+</div>
+
+<!-- ══ SYMPTOM CHECKER PAGE ══ -->
+<div class="page" id="symptomPage">
+  <div class="sub-hdr">
+    <button class="sub-hdr-bk" onclick="showPage('home')">←</button>
+    <span class="sub-hdr-txt">🩺 Symptom Checker</span>
+  </div>
+  <div class="sub-body">
+    <div class="sym-hero">
+      <span style="font-size:36px;">🩺</span>
+      <div><div style="font-size:15px;font-weight:900;">Check Your Symptoms</div><div style="font-size:11px;opacity:.85;margin-top:2px;">Get medicine suggestions by symptoms</div></div>
+    </div>
+    <div style="font-size:12px;font-weight:800;color:var(--mu);margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px;">Select all your symptoms:</div>
+    <div class="sym-grid">
+      <div class="sym-chip" onclick="toggleSym(this,'fever')"><div class="sym-chip-ic">🌡️</div><div class="sym-chip-lbl">Fever</div></div>
+      <div class="sym-chip" onclick="toggleSym(this,'headache')"><div class="sym-chip-ic">🤕</div><div class="sym-chip-lbl">Headache</div></div>
+      <div class="sym-chip" onclick="toggleSym(this,'cough')"><div class="sym-chip-ic">😮‍💨</div><div class="sym-chip-lbl">Cough</div></div>
+      <div class="sym-chip" onclick="toggleSym(this,'cold')"><div class="sym-chip-ic">🤧</div><div class="sym-chip-lbl">Cold / Runny Nose</div></div>
+      <div class="sym-chip" onclick="toggleSym(this,'stomach')"><div class="sym-chip-ic">🤢</div><div class="sym-chip-lbl">Stomach Pain</div></div>
+      <div class="sym-chip" onclick="toggleSym(this,'vomit')"><div class="sym-chip-ic">🤮</div><div class="sym-chip-lbl">Vomiting</div></div>
+      <div class="sym-chip" onclick="toggleSym(this,'diarrhea')"><div class="sym-chip-ic">💧</div><div class="sym-chip-lbl">Diarrhea</div></div>
+      <div class="sym-chip" onclick="toggleSym(this,'bodyache')"><div class="sym-chip-ic">💪</div><div class="sym-chip-lbl">Body Ache</div></div>
+      <div class="sym-chip" onclick="toggleSym(this,'throat')"><div class="sym-chip-ic">😣</div><div class="sym-chip-lbl">Sore Throat</div></div>
+      <div class="sym-chip" onclick="toggleSym(this,'eyepain')"><div class="sym-chip-ic">👁️</div><div class="sym-chip-lbl">Eye Pain</div></div>
+      <div class="sym-chip" onclick="toggleSym(this,'allergy')"><div class="sym-chip-ic">🌸</div><div class="sym-chip-lbl">Allergy / Rash</div></div>
+      <div class="sym-chip" onclick="toggleSym(this,'acidity')"><div class="sym-chip-ic">🔥</div><div class="sym-chip-lbl">Acidity</div></div>
+    </div>
+    <button class="sym-check-btn" onclick="checkSymptoms()">🩺 Get Medicine Suggestions</button>
+    <div class="sym-result" id="symResult"></div>
+  </div>
+</div>
+
+<!-- ══ HEALTH CALCULATOR PAGE ══ -->
+<div class="page" id="calculatorPage">
+  <div class="sub-hdr">
+    <button class="sub-hdr-bk" onclick="showPage('home')">←</button>
+    <span class="sub-hdr-txt">🧮 Health Calculator</span>
+  </div>
+  <div class="sub-body">
+    <div class="calc-tabs-row">
+      <div class="calc-tab active" onclick="switchCalc('bmi',this)">BMI</div>
+      <div class="calc-tab" onclick="switchCalc('cal',this)">Calories</div>
+      <div class="calc-tab" onclick="switchCalc('water',this)">Water</div>
+      <div class="calc-tab" onclick="switchCalc('bp',this)">Blood Pressure</div>
+    </div>
+    <!-- BMI -->
+    <div class="calc-panel active" id="calcbmi">
+      <div class="calc-card">
+        <div style="font-size:13px;font-weight:900;color:var(--tx);margin-bottom:12px;">⚖️ BMI Calculator</div>
+        <label class="calc-lbl">Weight (kg)</label>
+        <input class="calc-inp" id="bmiW" type="number" placeholder="e.g. 65">
+        <label class="calc-lbl">Height (cm)</label>
+        <input class="calc-inp" id="bmiH" type="number" placeholder="e.g. 170">
+        <button class="calc-btn" onclick="doBMI()">Calculate BMI</button>
+        <div class="calc-result" id="bmiRes">
+          <div class="calc-result-val" id="bmiVal">–</div>
+          <div class="calc-result-cat" id="bmiCat">–</div>
+          <div class="calc-result-bar"><div class="calc-result-ptr" id="bmiPtr" style="left:0%"></div></div>
+          <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--mu);font-weight:700;"><span>Underweight</span><span>Normal</span><span>Overweight</span><span>Obese</span></div>
+          <div class="calc-result-desc" id="bmiDesc">–</div>
+        </div>
+      </div>
+    </div>
+    <!-- Calories -->
+    <div class="calc-panel" id="calccal">
+      <div class="calc-card">
+        <div style="font-size:13px;font-weight:900;color:var(--tx);margin-bottom:12px;">🔥 Daily Calorie Needs</div>
+        <label class="calc-lbl">Age</label><input class="calc-inp" id="calAge" type="number" placeholder="e.g. 30">
+        <label class="calc-lbl">Weight (kg)</label><input class="calc-inp" id="calW" type="number" placeholder="e.g. 70">
+        <label class="calc-lbl">Height (cm)</label><input class="calc-inp" id="calH" type="number" placeholder="e.g. 175">
+        <label class="calc-lbl">Gender</label>
+        <select class="calc-sel" id="calG"><option value="m">Male</option><option value="f">Female</option></select>
+        <label class="calc-lbl">Activity Level</label>
+        <select class="calc-sel" id="calA">
+          <option value="1.2">Sedentary (desk job)</option>
+          <option value="1.375">Light (1-3 days exercise)</option>
+          <option value="1.55">Moderate (3-5 days)</option>
+          <option value="1.725">Active (daily exercise)</option>
+        </select>
+        <button class="calc-btn" onclick="doCal()">Calculate</button>
+        <div class="calc-result" id="calRes">
+          <div class="calc-result-val" id="calVal">–</div>
+          <div class="calc-result-cat">Calories/day to maintain weight</div>
+          <div class="calc-result-desc" id="calDesc">–</div>
+        </div>
+      </div>
+    </div>
+    <!-- Water -->
+    <div class="calc-panel" id="calcwater">
+      <div class="calc-card">
+        <div style="font-size:13px;font-weight:900;color:var(--tx);margin-bottom:12px;">💧 Daily Water Intake</div>
+        <label class="calc-lbl">Weight (kg)</label><input class="calc-inp" id="watW" type="number" placeholder="e.g. 70">
+        <label class="calc-lbl">Activity Level</label>
+        <select class="calc-sel" id="watA"><option value="1">Low activity</option><option value="1.3">Moderate</option><option value="1.6">High activity</option></select>
+        <button class="calc-btn" onclick="doWater()">Calculate</button>
+        <div class="calc-result" id="watRes">
+          <div class="calc-result-val" id="watVal">–</div>
+          <div class="calc-result-cat">Litres per day</div>
+          <div class="calc-result-desc" id="watDesc">–</div>
+        </div>
+      </div>
+    </div>
+    <!-- BP -->
+    <div class="calc-panel" id="calcbp">
+      <div class="calc-card">
+        <div style="font-size:13px;font-weight:900;color:var(--tx);margin-bottom:12px;">❤️ Blood Pressure Checker</div>
+        <label class="calc-lbl">Systolic (upper) mmHg</label><input class="calc-inp" id="bpSys" type="number" placeholder="e.g. 120">
+        <label class="calc-lbl">Diastolic (lower) mmHg</label><input class="calc-inp" id="bpDia" type="number" placeholder="e.g. 80">
+        <button class="calc-btn" onclick="doBP()">Check</button>
+        <div class="calc-result" id="bpRes">
+          <div class="calc-result-val" id="bpVal">–/–</div>
+          <div class="calc-result-cat" id="bpCat">–</div>
+          <div class="calc-result-desc" id="bpDesc">–</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ NEARBY PHARMACIES PAGE ══ -->
+<div class="page" id="pharmacyPage">
+  <div class="sub-hdr">
+    <button class="sub-hdr-bk" onclick="showPage('home')">←</button>
+    <span class="sub-hdr-txt">🏪 Nearby Pharmacies</span>
+  </div>
+  <div class="sub-body">
+    <div class="pharm-search-bar">
+      <span style="font-size:18px;color:var(--mu);">🔍</span>
+      <input type="text" id="pharmQ" placeholder="Search pharmacies..." oninput="filterPharm()">
+    </div>
+    <div id="pharmList"></div>
+  </div>
+</div>
+
+<!-- ══ MEDBOT CHAT PAGE ══ -->
+<div class="page" id="chatPage">
+  <div class="sub-hdr">
+    <button class="sub-hdr-bk" onclick="showPage('home')">←</button>
+    <span class="sub-hdr-txt">💬 MedBot — Health Assistant</span>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;background:#4ade80;border-radius:50%;display:inline-block;"></span><span style="font-size:10px;color:rgba(255,255,255,.8);font-weight:700;">Online</span></div>
+  </div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-bar">
+    <input class="chat-inp" id="chatInp" placeholder="Ask about medicines, symptoms..." onkeydown="if(event.key==='Enter')sendChat()">
+    <button class="chat-send" onclick="sendChat()">➤</button>
+  </div>
+</div>
+
+<!-- ══ HEALTH BLOG PAGE ══ -->
+<div class="page" id="blogPage">
+  <div class="sub-hdr">
+    <button class="sub-hdr-bk" onclick="showPage('home')">←</button>
+    <span class="sub-hdr-txt">📰 Health Blog</span>
+  </div>
+  <div class="sub-body" id="blogBody"></div>
+</div>
+
+<!-- ══ HEALTH TIPS MODAL ══ -->
+<div class="ov" id="tipsMod" onclick="closeTipsMod(event)">
+  <div class="mb" id="tipsMB">
+    <div class="mh"></div>
+    <div class="mt" id="tipsModTitle">💡 Health Tips</div>
+    <div id="tipsModContent"></div>
+  </div>
+</div>
+
+<!-- ══ BLOG DETAIL MODAL ══ -->
+<div class="ov" id="blogMod" onclick="closeBlogMod(event)">
+  <div class="mb"><div class="mh"></div><div id="blogModContent"></div></div>
+</div>
+
+<script>
+// ════════════════════════════════════════════════
+// NEW FEATURES — Clean Integration
+// ════════════════════════════════════════════════
+
+// ── Patch showPage to handle new pages ──
+(function(){
+  var _orig = window.showPage;
+  window.showPage = function(n){
+    // Map short names to page IDs
+    var aliases = {reminder:'reminder',symptom:'symptom',calculator:'calculator',pharmacy:'pharmacy',chat:'chat',blog:'blog'};
+    if(aliases[n]){
+      document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
+      var pg = document.getElementById(n+'Page');
+      if(pg) pg.classList.add('active');
+      // Init on first visit
+      if(n==='pharmacy') renderPharm(pharmData);
+      if(n==='blog') renderBlog();
+      if(n==='chat') initChat();
+      if(n==='reminder') renderReminders();
+    } else {
+      if(_orig) _orig.call(window, n);
+    }
+  };
+})();
+
+// ── HEALTH TIPS ──
+var healthTips = [
+  {ic:'💧', title:'Stay Hydrated', txt:'Drink at least 8 glasses of water daily. Dehydration causes fatigue, headaches and poor focus.'},
+  {ic:'🥗', title:'Eat Balanced Meals', txt:'Fill half your plate with vegetables and fruits. Choose whole grains and lean protein over processed food.'},
+  {ic:'😴', title:'Prioritize Sleep', txt:'Adults need 7–9 hours of sleep. Poor sleep weakens immunity and increases disease risk significantly.'},
+  {ic:'🚶', title:'Walk Every Day', txt:'Just 30 minutes of walking daily reduces heart disease risk by 35% and boosts your mood naturally.'},
+  {ic:'🧘', title:'Manage Stress', txt:'Practice 10 minutes of deep breathing or meditation daily. Chronic stress damages the heart and immune system.'},
+  {ic:'🌞', title:'Get Morning Sunlight', txt:'15–20 minutes of morning sun boosts Vitamin D, improves mood and regulates your sleep cycle.'},
+  {ic:'🍎', title:'Eat Seasonal Fruits', txt:'Seasonal fruits are freshest and most nutritious. They strengthen immunity and provide natural energy.'},
+  {ic:'🚭', title:'Avoid Smoking & Alcohol', txt:'Smoking causes 90% of lung cancers. Even occasional drinking damages the liver. Quit now for a longer life.'},
+];
+var tipIdx = Math.floor(Math.random() * healthTips.length);
+
+function initTipBar(){
+  var t = healthTips[tipIdx];
+  var ic = document.getElementById('tipBarIc');
+  var tx = document.getElementById('tipBarTxt');
+  if(ic) ic.textContent = t.ic;
+  if(tx) tx.textContent = t.title + ': ' + t.txt;
+}
+
+function openTipsModal(){
+  var content = healthTips.map(function(t, i){
+    return '<div style="display:flex;align-items:flex-start;gap:11px;padding:11px;background:var(--pb);border-radius:12px;margin-bottom:9px;border:1px solid var(--bd);">'
+      +'<span style="font-size:22px;flex-shrink:0;">'+t.ic+'</span>'
+      +'<div><div style="font-size:12px;font-weight:900;color:var(--tx);margin-bottom:3px;">'+t.title+'</div>'
+      +'<div style="font-size:11px;color:var(--mu);font-weight:600;line-height:1.5;">'+t.txt+'</div></div>'
+    +'</div>';
+  }).join('');
+  document.getElementById('tipsModContent').innerHTML = content
+    +'<div style="background:#fff7ed;border-radius:12px;padding:11px;font-size:11px;color:#92400e;font-weight:700;margin-top:4px;">⚠️ These are general wellness tips. Always consult a doctor for medical advice.</div>'
+    +'<button onclick="closeTipsMod()" style="width:100%;margin-top:12px;background:linear-gradient(135deg,var(--ac),#047857);color:#fff;border:none;padding:13px;border-radius:13px;font-size:14px;font-weight:800;cursor:pointer;">✅ Got it!</button>';
+  document.getElementById('tipsMod').classList.add('open');
+}
+function closeTipsMod(e){ if(!e||e.target===document.getElementById('tipsMod')) document.getElementById('tipsMod').classList.remove('open'); }
+
+// ── LOYALTY POINTS ──
+function getLoyalty(){ return parseInt(localStorage.getItem('emsLoyalty')||'0'); }
+function addLoyalty(amt){ var p=getLoyalty()+Math.floor(amt/10); localStorage.setItem('emsLoyalty',p); updateLoyaltyUI(); }
+function updateLoyaltyUI(){
+  var p=getLoyalty();
+  var el1=document.getElementById('loyaltyPtsHome');
+  if(el1) el1.textContent=p;
+}
+
+// ── MEDICINE REMINDERS ──
+var reminders = JSON.parse(localStorage.getItem('emsReminders')||'[]');
+var remFreq = 'Daily';
+function selFreq(el,f){
+  remFreq=f;
+  document.querySelectorAll('.freq-chip').forEach(function(c){c.classList.remove('sel');});
+  el.classList.add('sel');
+}
+function addReminder(){
+  var name=(document.getElementById('remName').value||'').trim();
+  var dose=(document.getElementById('remDose').value||'').trim();
+  var time=document.getElementById('remTime').value;
+  var notes=(document.getElementById('remNotes').value||'').trim();
+  if(!name){toast('❌ Enter medicine name');return;}
+  if(!time){toast('❌ Select a time');return;}
+  reminders.push({id:Date.now(),name:name,dose:dose||'As prescribed',time:time,freq:remFreq,notes:notes,taken:false});
+  localStorage.setItem('emsReminders',JSON.stringify(reminders));
+  document.getElementById('remName').value='';
+  document.getElementById('remDose').value='';
+  document.getElementById('remTime').value='';
+  document.getElementById('remNotes').value='';
+  renderReminders();
+  toast('⏰ Reminder set for '+name+' at '+fmtTime(time));
+}
+function renderReminders(){
+  var list=document.getElementById('remList');
+  if(!list)return;
+  if(!reminders.length){
+    list.innerHTML='<div class="rem-empty">💊 No reminders yet.<br>Add one above to get started!</div>';
+    return;
+  }
+  list.innerHTML=reminders.map(function(r,i){
+    return '<div class="rem-card">'
+      +'<div class="rem-card-left">💊</div>'
+      +'<div class="rem-card-info">'
+        +'<div class="rem-card-name">'+r.name+'</div>'
+        +'<div class="rem-card-meta">'+r.dose+' · '+r.freq+(r.notes?' · '+r.notes:'')+'</div>'
+        +'<div class="rem-card-time">⏰ '+fmtTime(r.time)+'</div>'
+      +'</div>'
+      +'<button class="rem-taken'+(r.taken?' done':'')+'" onclick="toggleTaken('+i+')">'+(r.taken?'✅ Done':'Mark Done')+'</button>'
+      +'<button class="rem-del-btn" onclick="delRem('+i+')">🗑️</button>'
+    +'</div>';
+  }).join('');
+}
+function toggleTaken(i){reminders[i].taken=!reminders[i].taken;localStorage.setItem('emsReminders',JSON.stringify(reminders));renderReminders();toast(reminders[i].taken?'✅ Medicine marked taken!':'↩️ Marked as not taken');}
+function delRem(i){reminders.splice(i,1);localStorage.setItem('emsReminders',JSON.stringify(reminders));renderReminders();toast('🗑️ Reminder removed');}
+function fmtTime(t){if(!t)return'';var p=t.split(':'),h=parseInt(p[0]),m=p[1],ap=h>=12?'PM':'AM';h=h%12||12;return h+':'+m+' '+ap;}
+
+// ── SYMPTOM CHECKER ──
+var selSyms=[];
+var symDB={
+  fever:    {sev:'mod',  desc:'Fever often indicates infection. Rest, hydrate, and monitor temperature. See doctor if >103°F or 3+ days.',meds:['Paracetamol (Dolo 650)','Calpol 500mg','Combiflam']},
+  headache: {sev:'mild', desc:'Caused by dehydration, stress, or tension. Rest in a quiet dark room. Drink water.',meds:['Saridon','Combiflam','Disprin']},
+  cough:    {sev:'mild', desc:'Stay hydrated, avoid cold drinks. If productive or 3+ weeks, see a pulmonologist.',meds:['Benadryl Cough Syrup','Ascoril','Honitus Syrup']},
+  cold:     {sev:'mild', desc:'Common cold resolves in 7–10 days. Rest, stay warm, drink warm fluids.',meds:['Sinarest','Cetirizine 10mg','D-Cold Total']},
+  stomach:  {sev:'mod',  desc:'Can have many causes. If severe or with fever, see a doctor promptly.',meds:['Buscopan','Meftal Spas','Omeprazole 20mg']},
+  vomit:    {sev:'mod',  desc:'Causes dehydration fast. Take small sips of ORS. Avoid solid food initially.',meds:['Ondem 4mg','Perinorm','Electral ORS']},
+  diarrhea: {sev:'mod',  desc:'Drink ORS solution frequently. Eat light (khichdi, curd rice). See doctor if blood in stool.',meds:['Norflox TZ','ORS Electral','Enterogermina']},
+  bodyache: {sev:'mild', desc:'Often accompanies fever or flu. Rest adequately and take analgesics as directed.',meds:['Combiflam','Ibuprofen 400mg','Volini Gel (topical)']},
+  throat:   {sev:'mild', desc:'Gargle warm salt water 3x daily. Avoid cold drinks. Throat lozenges help.',meds:['Strepsils','Cofsils','Azithromycin (consult Dr.)']},
+  eyepain:  {sev:'mod',  desc:'Avoid rubbing eyes. Could be infection or strain. See ophthalmologist if persistent.',meds:['Lubricant Eye Drops','Moxifloxacin Drops (Rx)']},
+  allergy:  {sev:'mild', desc:'Identify and avoid allergens. Antihistamines relieve itching and rash.',meds:['Cetirizine 10mg','Montair LC','Avil 25mg']},
+  acidity:  {sev:'mild', desc:'Eat smaller meals, avoid spicy/oily food. Do not lie down right after eating.',meds:['Pantoprazole 40mg','Eno (antacid)','Gelusil MPS']},
+};
+function toggleSym(el,sym){
+  el.classList.toggle('sel');
+  var i=selSyms.indexOf(sym);
+  if(i>-1) selSyms.splice(i,1); else selSyms.push(sym);
+}
+function checkSymptoms(){
+  if(!selSyms.length){toast('❌ Select at least one symptom');return;}
+  var html='<div style="font-size:13px;font-weight:900;color:var(--tx);margin-bottom:10px;">💊 Suggestions for your symptoms</div>';
+  selSyms.forEach(function(s){
+    var r=symDB[s]; if(!r)return;
+    html+='<div class="sym-result-item">'
+      +'<div class="sym-name">'+s.charAt(0).toUpperCase()+s.slice(1)+'</div>'
+      +'<span class="sym-sev '+(r.sev==='mild'?'mild':r.sev==='mod'?'mod':'severe')+'">'+(r.sev==='mild'?'🟢 Mild':r.sev==='mod'?'🟡 Moderate':'🔴 Severe')+'</span>'
+      +'<div class="sym-desc">'+r.desc+'</div>'
+      +'<div class="sym-meds">💊 Common medicines: '+r.meds.join(' · ')+'</div>'
+    +'</div>';
+  });
+  html+='<div class="sym-disclaimer">⚠️ This is informational only. Always consult a qualified doctor for proper diagnosis and treatment.</div>';
+  var res=document.getElementById('symResult');
+  res.innerHTML=html; res.classList.add('show');
+  res.scrollIntoView({behavior:'smooth'});
+}
+
+// ── HEALTH CALCULATORS ──
+function switchCalc(id,el){
+  document.querySelectorAll('.calc-tab').forEach(function(t){t.classList.remove('active');});
+  document.querySelectorAll('.calc-panel').forEach(function(p){p.classList.remove('active');});
+  el.classList.add('active');
+  document.getElementById('calc'+id).classList.add('active');
+}
+function doBMI(){
+  var w=parseFloat(document.getElementById('bmiW').value),h=parseFloat(document.getElementById('bmiH').value)/100;
+  if(!w||!h){toast('❌ Enter weight and height');return;}
+  var bmi=(w/(h*h)).toFixed(1),cat,desc,pct;
+  if(bmi<18.5){cat='Underweight';desc='You may need to gain weight. Consult a nutritionist.';pct=8;}
+  else if(bmi<25){cat='✅ Normal Weight';desc='Great! Maintain your healthy lifestyle.';pct=35;}
+  else if(bmi<30){cat='⚠️ Overweight';desc='Consider diet and exercise to reduce health risks.';pct=62;}
+  else{cat='⛔ Obese';desc='High health risk. Please consult a doctor for a structured plan.';pct=88;}
+  document.getElementById('bmiVal').textContent=bmi;
+  document.getElementById('bmiCat').textContent=cat;
+  document.getElementById('bmiDesc').textContent=desc;
+  document.getElementById('bmiPtr').style.left=pct+'%';
+  document.getElementById('bmiRes').classList.add('show');
+}
+function doCal(){
+  var age=parseFloat(document.getElementById('calAge').value),w=parseFloat(document.getElementById('calW').value),h=parseFloat(document.getElementById('calH').value),g=document.getElementById('calG').value,a=parseFloat(document.getElementById('calA').value);
+  if(!age||!w||!h){toast('❌ Fill all fields');return;}
+  var bmr=g==='m'?(10*w)+(6.25*h)-(5*age)+5:(10*w)+(6.25*h)-(5*age)-161;
+  var tdee=Math.round(bmr*a);
+  document.getElementById('calVal').textContent=tdee;
+  document.getElementById('calDesc').textContent='To lose weight: '+(tdee-500)+' cal/day. To gain: '+(tdee+300)+' cal/day.';
+  document.getElementById('calRes').classList.add('show');
+}
+function doWater(){
+  var w=parseFloat(document.getElementById('watW').value),a=parseFloat(document.getElementById('watA').value);
+  if(!w){toast('❌ Enter weight');return;}
+  var L=((w*35*a)/1000).toFixed(1);
+  document.getElementById('watVal').textContent=L+' L';
+  document.getElementById('watDesc').textContent='That is about '+Math.round(L/0.25)+' glasses of water per day.';
+  document.getElementById('watRes').classList.add('show');
+}
+function doBP(){
+  var sys=parseInt(document.getElementById('bpSys').value),dia=parseInt(document.getElementById('bpDia').value);
+  if(!sys||!dia){toast('❌ Enter both values');return;}
+  var cat,desc;
+  if(sys<120&&dia<80){cat='✅ Normal';desc='Your blood pressure is healthy. Keep up the good habits!';}
+  else if(sys<130&&dia<80){cat='⚠️ Elevated';desc='Slightly high. Reduce sodium, exercise regularly, and monitor.';}
+  else if(sys<140||dia<90){cat='🟡 High — Stage 1';desc='Consult a doctor. Lifestyle changes and possibly medication needed.';}
+  else if(sys>=180||dia>=120){cat='🆘 Crisis — See Doctor NOW';desc='Dangerously high! Seek emergency medical care immediately.';}
+  else{cat='🔴 High — Stage 2';desc='See a doctor immediately. Medication is likely required.';}
+  document.getElementById('bpVal').textContent=sys+'/'+dia;
+  document.getElementById('bpCat').textContent=cat;
+  document.getElementById('bpDesc').textContent=desc;
+  document.getElementById('bpRes').classList.add('show');
+}
+
+// ── NEARBY PHARMACIES ──
+var pharmData=[
+  {name:'Apollo Pharmacy',addr:'Anna Salai, Chennai 600002',phone:'04428520000',dist:'0.3 km',open:true,h24:true,ic:'🏥'},
+  {name:'MedPlus Pharmacy',addr:'T Nagar, Chennai 600017',phone:'18001022887',dist:'0.8 km',open:true,h24:false,ic:'💊'},
+  {name:'Wellness Forever',addr:'Adyar, Chennai 600020',phone:'04424912345',dist:'1.2 km',open:true,h24:false,ic:'🌿'},
+  {name:'Sree Balaji Medical',addr:'Teynampet, Chennai 600018',phone:'04424343434',dist:'1.5 km',open:false,h24:false,ic:'🏪'},
+  {name:'Dr. Mohan\'s Pharmacy',addr:'Egmore, Chennai 600008',phone:'04428190001',dist:'2.1 km',open:true,h24:true,ic:'👨‍⚕️'},
+  {name:'Vijaya Medical Store',addr:'Nungambakkam, Chennai 600034',phone:'04428264141',dist:'2.5 km',open:true,h24:false,ic:'💉'},
+  {name:'Chennai Medical Hall',addr:'Mylapore, Chennai 600004',phone:'04424612345',dist:'3.0 km',open:true,h24:false,ic:'🏨'},
+  {name:'Govt. Pharmacy — GGH',addr:'Poonamallee High Rd, Chennai',phone:'04428154077',dist:'3.8 km',open:true,h24:true,ic:'🏛️'},
+];
+function renderPharm(list){
+  var el=document.getElementById('pharmList');
+  if(!el)return;
+  if(!list.length){el.innerHTML='<div style="text-align:center;padding:40px;color:var(--mu);font-size:13px;">No pharmacies found.</div>';return;}
+  el.innerHTML=list.map(function(p){
+    var tags='';
+    if(p.h24) tags+='<span class="pharm-tag pharm-24h">24/7</span>';
+    if(p.open&&!p.h24) tags+='<span class="pharm-tag pharm-open">Open Now</span>';
+    if(!p.open) tags+='<span class="pharm-tag pharm-closed">Closed</span>';
+    return '<div class="pharm-card">'
+      +'<div class="pharm-top">'
+        +'<div class="pharm-ic">'+p.ic+'</div>'
+        +'<div style="flex:1;min-width:0;">'
+          +'<div class="pharm-name">'+p.name+'</div>'
+          +'<div class="pharm-addr">'+p.addr+'</div>'
+          +'<div class="pharm-tags">'+tags+'</div>'
+        +'</div>'
+        +'<div class="pharm-dist">'+p.dist+'</div>'
+      +'</div>'
+      +'<div class="pharm-btns">'
+        +'<a class="pharm-call-btn" href="tel:'+p.phone+'">📞 Call</a>'
+        +'<a class="pharm-dir-btn" href="https://maps.google.com/?q='+encodeURIComponent(p.name+' '+p.addr)+'" target="_blank">📍 Directions</a>'
+      +'</div>'
+    +'</div>';
+  }).join('');
+}
+function filterPharm(){
+  var q=(document.getElementById('pharmQ').value||'').toLowerCase();
+  renderPharm(pharmData.filter(function(p){return p.name.toLowerCase().includes(q)||p.addr.toLowerCase().includes(q);}));
+}
+
+// ── MEDBOT CHAT ──
+var chatInited=false;
+var chatFAQ=[
+  {keys:['hello','hi','hey'],reply:'👋 Hi! I\'m MedBot, your health assistant. Ask me about medicines, symptoms, doctors, or orders!',opts:['Medicine Info','Find Doctor','Track Order','Emergency Help']},
+  {keys:['medicine','paracetamol','tablet'],reply:'💊 Paracetamol (Dolo 650/Calpol): For fever and mild pain. Adult dose: 500mg–1g every 4–6 hours. Max 4g/day. Take with food.',opts:['More Medicine Info','Symptom Checker','Book Doctor']},
+  {keys:['fever'],reply:'🌡️ For fever: Take Paracetamol (Dolo 650). Rest and drink plenty of fluids. If fever exceeds 103°F or lasts 3+ days, see a doctor.',opts:['Order Medicine','Book Doctor']},
+  {keys:['cold','cough','flu'],reply:'🤧 For cold & cough: Take Sinarest or Cetirizine for cold. Ascoril or Benadryl syrup for cough. Drink warm fluids and rest.',opts:['Order Medicine','See Doctor']},
+  {keys:['doctor','appointment','book'],reply:'👨‍⚕️ Book a doctor appointment in the Doctors tab. We have specialists in Cardiology, Neurology, Pediatrics, Orthopedics and more!',opts:['Go to Doctors']},
+  {keys:['order','track','delivery'],reply:'📦 Track your order in Profile → Order History. Home delivery in 2 hours! Orders above ₹500 get free delivery.',opts:['View Orders','Contact Support']},
+  {keys:['emergency','sos','ambulance'],reply:'🆘 EMERGENCY: Call 108 for ambulance (free across TN). Go to Contact tab for our SOS button that alerts all your emergency contacts.',opts:['Go to Contact','Call 108']},
+  {keys:['prescription','rx','upload'],reply:'📋 Upload your prescription using the Upload Rx button on the home screen. Our pharmacist verifies and processes your order.',opts:['Got it']},
+  {keys:['price','cost','discount','promo'],reply:'🎉 Use promo code SAVE10 for 10% off! Orders above ₹500 get free delivery. Earn loyalty points on every purchase.',opts:['Browse Medicines']},
+  {keys:['blood pressure','bp','hypertension'],reply:'❤️ For blood pressure: Reduce salt intake, exercise daily, avoid stress. Never skip BP medications. Use our BP Checker calculator!',opts:['Open BP Calculator','Book Cardiologist']},
+  {keys:['diabetes','sugar','insulin'],reply:'🩸 Diabetes management: Monitor blood sugar daily, follow low-GI diet, exercise 30 min/day, never skip medications.',opts:['Book Endocrinologist']},
+  {keys:['bmi','weight','height'],reply:'⚖️ Calculate your BMI in the Health Calculator feature! It also calculates daily calories, water intake and more.',opts:['Open Calculator']},
+  {keys:['pharmacy','medical store','near'],reply:'🏪 Find nearby pharmacies in the Pharmacy Finder! 8 pharmacies near Chennai with call and directions.',opts:['Open Pharmacy Finder']},
+  {keys:['hours','timing','open','24'],reply:'🕐 Our Emergency Medical Store is open 24/7! You can order medicines anytime, day or night.',opts:['Order Now']},
+  {keys:['return','refund','cancel'],reply:'↩️ Returns accepted within 7 days for unopened medicines with original packaging. Contact us for return assistance.',opts:['Contact Support']},
+  {keys:['help','support','assist'],reply:'💡 I can help with:\n• Medicine information\n• Symptom advice\n• Doctor booking\n• Order tracking\n• Health tips\n• Emergency guidance\n\nWhat do you need?',opts:['Medicine Info','Find Doctor','Emergency Help','Health Tips']},
+];
+function initChat(){
+  if(chatInited)return;
+  chatInited=true;
+  addBotMsg('👋 Hi! I\'m <b>MedBot</b>, your 24/7 health assistant at Emergency Medical Store!<br><br>How can I help you today?',['Medicine Info','Find Doctor','Track Order','Emergency Help','Health Tips']);
+}
+function addBotMsg(txt,opts){
+  var body=document.getElementById('chatBody');
+  if(!body)return;
+  var now=new Date(),t=now.getHours()+':'+String(now.getMinutes()).padStart(2,'0');
+  var div=document.createElement('div');
+  div.className='chat-bubble-wrap';
+  div.innerHTML='<div class="chat-sender">🤖 MedBot</div>'
+    +'<div class="chat-bubble bot">'+txt
+    +(opts?'<div class="chat-opts">'+opts.map(function(o){return '<button class="chat-opt" onclick="quickReply(\''+o+'\')">'+o+'</button>';}).join('')+'</div>':'')
+    +'</div><div class="chat-time">'+t+'</div>';
+  body.appendChild(div);
+  body.scrollTop=body.scrollHeight;
+}
+function addUserMsg(txt){
+  var body=document.getElementById('chatBody');
+  if(!body)return;
+  var now=new Date(),t=now.getHours()+':'+String(now.getMinutes()).padStart(2,'0');
+  var div=document.createElement('div');
+  div.className='chat-bubble-wrap user';
+  div.innerHTML='<div class="chat-bubble user">'+txt+'</div><div class="chat-time">'+t+'</div>';
+  body.appendChild(div);
+  body.scrollTop=body.scrollHeight;
+}
+function showTyping(){
+  var body=document.getElementById('chatBody');
+  if(!body)return;
+  var div=document.createElement('div');
+  div.className='chat-bubble-wrap'; div.id='chatTyping';
+  div.innerHTML='<div class="chat-sender">🤖 MedBot</div><div class="chat-bubble bot"><div class="chat-dot-wrap"><div class="chat-dot"></div><div class="chat-dot"></div><div class="chat-dot"></div></div></div>';
+  body.appendChild(div);
+  body.scrollTop=body.scrollHeight;
+}
+function getBotReply(q){
+  q=q.toLowerCase();
+  for(var i=0;i<chatFAQ.length;i++){
+    var faq=chatFAQ[i];
+    for(var j=0;j<faq.keys.length;j++){
+      if(q.includes(faq.keys[j])) return faq;
+    }
+  }
+  return {reply:'🤔 I\'m not sure about that. You can call our helpline or visit the Contact tab for direct assistance. Type "help" to see what I can do!',opts:['Help','Emergency Help','Contact Us']};
+}
+function sendChat(){
+  var inp=document.getElementById('chatInp');
+  var txt=(inp.value||'').trim();
+  if(!txt)return;
+  addUserMsg(txt);
+  inp.value='';
+  showTyping();
+  setTimeout(function(){
+    var el=document.getElementById('chatTyping'); if(el)el.remove();
+    var r=getBotReply(txt);
+    // Handle action opts
+    addBotMsg(r.reply,r.opts);
+  },700+Math.random()*500);
+}
+function quickReply(txt){
+  // Handle navigation shortcuts
+  if(txt==='Go to Doctors'){showPage('doctors');return;}
+  if(txt==='Go to Contact'){switchTab('contact');return;}
+  if(txt==='Open Calculator'){showPage('calculator');return;}
+  if(txt==='Open Pharmacy Finder'){showPage('pharmacy');return;}
+  if(txt==='Browse Medicines'){switchTab('home');return;}
+  if(txt==='View Orders'){showPage('orders');return;}
+  var inp=document.getElementById('chatInp');
+  inp.value=txt;
+  sendChat();
+}
+
+// ── HEALTH BLOG ──
+var blogData=[
+  {ic:'💊',tag:'Medicines',tc:'#dbeafe',tt:'#1d4ed8',title:'5 Essential Medicines for Your Home Kit',excerpt:'A basic home medicine kit can save lives in emergencies. Here are the must-have medicines every household should stock.',body:'<ul><li><b>Paracetamol (Dolo 650)</b> — Fever and pain relief</li><li><b>ORS Sachets (Electral)</b> — Dehydration from diarrhea/vomiting</li><li><b>Antacid (Gelusil/Digene)</b> — Acidity and heartburn</li><li><b>Antihistamine (Cetirizine)</b> — Allergies and cold</li><li><b>Antiseptic (Betadine/Dettol)</b> — Wound cleaning</li></ul><br><p>Always check expiry dates. Store in a cool, dry place away from children.</p>',author:'Dr. Priya Sharma',read:'3 min'},
+  {ic:'❤️',tag:'Heart Health',tc:'#fee2e2',tt:'#991b1b',title:'Warning Signs of a Heart Attack',excerpt:'Recognizing early symptoms of a heart attack can save your life. Learn what to watch for and when to call 108.',body:'<ul><li><b>Chest pain or pressure</b> — Tightness, squeezing or burning</li><li><b>Pain in left arm or jaw</b> — Radiating from chest</li><li><b>Shortness of breath</b> — Even while resting</li><li><b>Cold sweat and nausea</b> — Often with chest discomfort</li><li><b>Unusual fatigue</b> — Especially in women</li></ul><br><p><b>If you experience these symptoms, call 108 IMMEDIATELY.</b> Chew aspirin while waiting (if not allergic).</p>',author:'Dr. Rajesh Kumar',read:'5 min'},
+  {ic:'🥗',tag:'Nutrition',tc:'#d1fae5',tt:'#065f46',title:'Immunity-Boosting Foods for Monsoon',excerpt:'Monsoon brings higher infection risk. These foods strengthen your immune system naturally.',body:'<ul><li><b>Turmeric (Haldi)</b> — Powerful anti-inflammatory and antioxidant</li><li><b>Ginger</b> — Relieves sore throat and aids digestion</li><li><b>Citrus Fruits</b> — Rich in Vitamin C for immunity</li><li><b>Garlic</b> — Natural antibiotic and antiviral properties</li><li><b>Leafy Greens (Spinach)</b> — Vitamins A, C, and K for immunity</li></ul><br><p>Drink boiled or filtered water during monsoon to prevent waterborne diseases.</p>',author:'Nutritionist Deepa',read:'4 min'},
+  {ic:'🧘',tag:'Mental Health',tc:'#ede9fe',tt:'#5b21b6',title:'Simple Techniques to Manage Stress',excerpt:'Chronic stress is a silent killer. These simple daily practices dramatically improve mental health.',body:'<ul><li><b>4-7-8 Breathing</b> — Inhale 4s, hold 7s, exhale 8s. Repeat 4 times</li><li><b>Mindfulness Meditation</b> — 10 min daily reduces cortisol by 20%</li><li><b>Daily Walk</b> — Exercise releases natural mood-boosting endorphins</li><li><b>Sleep Routine</b> — Same sleep/wake time improves mental health</li><li><b>Social Connection</b> — Talk to someone you trust regularly</li></ul><br><p>If stress affects daily life, speak with a mental health professional. There is no shame in seeking help.</p>',author:'Dr. Meera Pillai',read:'4 min'},
+  {ic:'🩸',tag:'Diabetes',tc:'#fef3c7',tt:'#92400e',title:'Managing Diabetes Effectively at Home',excerpt:'India has 77+ million diabetics. With the right habits, diabetes can be well-controlled.',body:'<ul><li><b>Monitor Daily</b> — Check fasting and post-meal blood sugar</li><li><b>Low-GI Diet</b> — Avoid white rice, maida, sugary drinks</li><li><b>Walk 30 Minutes</b> — Significantly lowers blood sugar naturally</li><li><b>Never Skip Medication</b> — Take as prescribed even if you feel fine</li><li><b>Regular HbA1c Test</b> — Every 3 months to track control</li></ul><br><p>Book an endocrinologist through our Doctors tab for personalized management.</p>',author:'Dr. Arun Babu',read:'5 min'},
+  {ic:'👶',tag:'Child Health',tc:'#fce7f3',tt:'#9d174d',title:'Vaccination Schedule Every Parent Should Know',excerpt:'Timely vaccination protects children from deadly diseases. The complete immunization schedule for India.',body:'<ul><li><b>At Birth</b> — BCG, Hepatitis B, OPV (Polio)</li><li><b>6 Weeks</b> — DTwP, Hib, IPV, Rotavirus, PCV</li><li><b>9–12 Months</b> — MMR, Varicella, Hepatitis A</li><li><b>4–6 Years</b> — DTwP Booster, MMR 2nd dose</li><li><b>10–12 Years</b> — HPV vaccine (recommended for girls)</li></ul><br><p>Keep vaccination records safe. If you missed a vaccine, consult our pediatricians — available in the Doctors tab!</p>',author:'Dr. Kavitha Nair',read:'4 min'},
+];
+function renderBlog(){
+  var wrap=document.getElementById('blogBody');
+  if(!wrap)return;
+  wrap.innerHTML='<div style="padding:14px 0 4px;"><div style="font-size:17px;font-weight:900;color:var(--tx);">📰 Health &amp; Wellness</div><div style="font-size:11px;color:var(--mu);font-weight:600;margin-top:2px;">Expert advice for a healthier you</div></div>'
+  +blogData.map(function(p,i){
+    return '<div class="blog-card">'
+      +'<div class="blog-thumb">'+p.ic+'</div>'
+      +'<div class="blog-body">'
+        +'<span class="blog-tag-badge" style="background:'+p.tc+';color:'+p.tt+';">'+p.tag+'</span>'
+        +'<div class="blog-title">'+p.title+'</div>'
+        +'<div class="blog-excerpt">'+p.excerpt+'</div>'
+        +'<div class="blog-footer"><span>✍️ '+p.author+' · '+p.read+' read</span><span class="blog-read-btn" onclick="openBlogPost('+i+')">Read More ›</span></div>'
+      +'</div>'
+    +'</div>';
+  }).join('');
+}
+function openBlogPost(i){
+  var p=blogData[i];
+  document.getElementById('blogModContent').innerHTML=
+    '<div style="font-size:40px;text-align:center;margin-bottom:8px;">'+p.ic+'</div>'
+    +'<span class="blog-tag-badge" style="background:'+p.tc+';color:'+p.tt+';">'+p.tag+'</span>'
+    +'<div style="font-size:17px;font-weight:900;color:var(--tx);margin:8px 0;">'+p.title+'</div>'
+    +'<div style="font-size:11px;color:var(--mu);font-weight:600;margin-bottom:14px;">✍️ '+p.author+' · '+p.read+' read</div>'
+    +'<div class="blog-detail-body">'+p.body+'</div>'
+    +'<button onclick="closeBlogMod()" style="width:100%;background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;border:none;padding:13px;border-radius:13px;font-size:14px;font-weight:800;cursor:pointer;margin-top:16px;font-family:Poppins,sans-serif;">← Back to Blog</button>';
+  document.getElementById('blogMod').classList.add('open');
+}
+function closeBlogMod(e){if(!e||e.target===document.getElementById('blogMod')) document.getElementById('blogMod').classList.remove('open');}
+
+// ── INIT ON PAGE LOAD ──
+document.addEventListener('DOMContentLoaded', function(){
+  initTipBar();
+  updateLoyaltyUI();
+  renderPharm(pharmData);
+  renderBlog();
+  renderReminders();
+
+  // Hook loyalty into order confirm
+  var origConfirm = window.confirmOrder;
+  if(typeof origConfirm === 'function'){
+    window.confirmOrder = function(){
+      origConfirm();
+      setTimeout(function(){
+        var el = document.getElementById('ckTotal');
+        if(el){ var amt=parseInt((el.textContent||'').replace(/[^\d]/g,'')); if(amt>0) addLoyalty(amt); }
+      }, 500);
+    };
+  }
+});
+</script>
+
 </html>
